@@ -1,12 +1,8 @@
 //rfce react function components export
 import React from "react";
-
+import DefaultLayout from "../components/DefaultLayout";
 function Addpost() {
-  return (
-    <div>
-      <h1>Add post page</h1>
-    </div>
-  );
+  return <DefaultLayout>Add</DefaultLayout>;
 }
 
 export default Addpost;

@@ -7,7 +7,7 @@ import {
   VideoCameraOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
-
+import { Link } from "react-router-dom";
 import "./defaultlayout.css";
 const { Header, Sider, Content } = Layout;
 
@@ -51,13 +51,13 @@ class DefaultLayout extends React.Component {
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
+              <Link to="/"> Home</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
+              <Link to="/addpost">Add Post</Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
+              <Link to="/profile"> Profile</Link>
             </Menu.Item>
           </Menu>
         </Sider>
