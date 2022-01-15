@@ -34,7 +34,21 @@ function Register() {
             <Form.Item
               label="confirmpassword"
               name="cpassword"
-              rules={[{ required: true }]}
+              rules={[
+                { required: true },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      new Error(
+                        "The two passwords that you entered do not match!"
+                      )
+                    );
+                  },
+                }),
+              ]}
             >
               <Input />
             </Form.Item>

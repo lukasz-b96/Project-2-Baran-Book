@@ -4,13 +4,26 @@ const User = require("../models/userModel");
 
 // async to use try catch insted of callback function
 router.post("/register", async (req, res) => {
+  //check if user exists
+  try {
+    const user = await User.findOne({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    if (user) {
+      return res.status(401).send("user exists");
+    }
+  } catch (error) {
+    return res.status(500).send("internal server problem");
+  }
+
   try {
     const newuser = new User(req.body);
     await newuser.save();
-    res.send("user registered succesfully");
+    res.status(201).send("user registered succesfully");
   } catch (error) {
     console.error(error);
-    return res.status(400).json(error);
+    return res.status(401).json(error);
   }
 });
 
@@ -21,13 +34,13 @@ router.post("/login", async (req, res) => {
       password: req.body.password,
     });
     if (user) {
-      res.send(user);
+      res.status(200).send(user);
     } else {
-      res.send("invalid credentials");
+      res.status(401).send("invalid credentials");
     }
   } catch (error) {
     console.error(error);
-    return res.status(400).json(error);
+    return res.status(401).json(error);
   }
 });
 
