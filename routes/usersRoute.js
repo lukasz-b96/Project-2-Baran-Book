@@ -21,7 +21,7 @@ router.post("/login", async (req, res) => {
       password: req.body.password,
     });
     if (user) {
-      res.send("user login succesfully");
+      res.send(user);
     } else {
       res.send("invalid credentials");
     }

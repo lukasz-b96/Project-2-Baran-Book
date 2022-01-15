@@ -27,3 +27,13 @@ input,
 button {
   border: 1px solid black !important;
 }
+
+.spinner-border {
+  position: fixed !important;
+  color: blue;
+  top: 60% !important;
+  left: calc(50% - 50px) !important;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+}
