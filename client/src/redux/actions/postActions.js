@@ -25,6 +25,20 @@ export const addPost = (values) => async (dispatch) => {
       message.error("NOT AN IMAGE");
     }
   } catch (error) {
-    message.error("something went wrong with adding posts, NOT AN IMAGE");
+    message.error("something went wrong with adding posts");
+  }
+};
+
+export const getAllPosts = () => async (dispatch) => {
+  dispatch({ type: "LOADING", payload: true });
+
+  try {
+    const response = await axios.get("/api/posts/getallposts");
+    dispatch({ type: "LOADING", payload: false });
+    dispatch({ type: "GET_ALL_POSTS", payload: response.data });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: "LOADING", payload: false });
+    message.error("something went wrong");
   }
 };

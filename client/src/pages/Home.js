@@ -5,10 +5,11 @@ import { useSelector } from "react-redux";
 
 function Home() {
   const { users } = useSelector((state) => state.userReducer);
+  const { posts } = useSelector((state) => state.postsReducer);
   return (
     <DefaultLayout>
       Home
-      <h2>Users length = {users.length}</h2>
+      <h2> {posts.length}</h2>
     </DefaultLayout>
   );
 }

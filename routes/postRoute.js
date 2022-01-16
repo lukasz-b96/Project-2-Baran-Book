@@ -22,4 +22,13 @@ router.post("/addpost", async (req, res) => {
   }
 });
 
+router.get("/getallposts", async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.send(posts);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports = router;
