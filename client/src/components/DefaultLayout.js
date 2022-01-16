@@ -29,7 +29,9 @@ class DefaultLayout extends React.Component {
           <Header className="site-layout-background " style={{ padding: 0 }}>
             {/* bootstrap classes (equal division)*/}
             <div className="d-flex justify-content-between align-items-center bs2">
-              <h4>Temp user</h4>
+              <h4 className="ml-2">
+                {JSON.parse(localStorage.getItem("user")).username}
+              </h4>
               <h2>BaranGram</h2>
               {React.createElement(
                 this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
