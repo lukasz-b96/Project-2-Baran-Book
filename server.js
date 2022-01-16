@@ -5,6 +5,7 @@ const dbConnection = require("./db");
 const userRoute = require("./routes/usersRoute");
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/users", userRoute);
 
