@@ -28,7 +28,7 @@ class DefaultLayout extends React.Component {
         <Layout className="site-layout">
           <Header className="site-layout-background " style={{ padding: 0 }}>
             {/* bootstrap classes (equal division)*/}
-            <div className="d-flex justify-content-between align-items-center bs1">
+            <div className="d-flex justify-content-between align-items-center bs2">
               <h4>Temp user</h4>
               <h2>BaranGram</h2>
               {React.createElement(

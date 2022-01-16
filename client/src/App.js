@@ -51,8 +51,6 @@ export default App;
 
 export const ProtectedRoute = (props) => {
   if (localStorage.getItem("user")) {
-    console.log(props);
-    console.log({ ...props });
     localStorage.getItem("user");
     return <Outlet {...props} />;
   } else {

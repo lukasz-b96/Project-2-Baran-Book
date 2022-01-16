@@ -8,7 +8,7 @@ function Login() {
   const dispatch = useDispatch();
 
   function login(values) {
-    console.log(values);
+    // console.log(values);
     dispatch(userLogin(values));
   }
   return (

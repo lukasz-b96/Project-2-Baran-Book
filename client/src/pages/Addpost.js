@@ -26,7 +26,7 @@ function Addpost() {
 
   function addpost(values) {
     values.image = image;
-    console.log(values.image);
+    // console.log(values.image);
     dispatch(addPost(values));
   }
 
@@ -46,7 +46,7 @@ function Addpost() {
                 { required: true },
                 () => ({
                   validator(_, value) {
-                    console.log(_);
+                    // console.log(_);
                     if (validImage.test(value)) {
                       return Promise.resolve();
                     }
@@ -57,6 +57,7 @@ function Addpost() {
             >
               <Input type="file" onChange={handleFileInput}></Input>
             </Form.Item>
+
             <div>{image !== "" && <img src={image} className="image" />}</div>
             <Button type="primary" htmlType="submit">
               Post

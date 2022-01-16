@@ -24,10 +24,13 @@ router.post("/addpost", async (req, res) => {
 
 router.get("/getallposts", async (req, res) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find()
+      .populate("user")
+      .sort({ createdAt: -1 })
+      .exec();
     res.send(posts);
   } catch (error) {
-    res.status(400).json(error);
+    return res.status(400).json(error);
   }
 });
 

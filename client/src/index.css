@@ -18,6 +18,11 @@ code {
 .bs1 {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 15px;
+}
+.bs2 {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .register-div {
@@ -39,4 +44,98 @@ input[type="file"] {
   width: 100px;
   height: 100px;
   z-index: 999;
+}
+
+.profilepic1 {
+  padding-left: 15px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 25px !important;
+  background-color: grey;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  color: white;
+  text-align: center !important;
+}
+img {
+  border-radius: 10px;
+}
+.postimage {
+  max-height: 35vw;
+  max-width: 35vw !important;
+  margin-top: 10px;
+}
+p {
+  color: grey;
+  margin: 5px !important;
+  font-size: 18px;
+}
+.anticon svg {
+  font-size: 18px !important;
+}
+.profilepic2 {
+  height: 50px !important;
+  width: 50px !important;
+  text-transform: uppercase;
+  border-radius: 50%;
+  background-color: grey !important;
+  text-align: center !important;
+  font-size: 35px !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+.postinprofile {
+  height: 200px;
+}
+
+.search-users {
+  width: "60%";
+}
+.register-maindiv {
+  min-height: 100vh !important;
+
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+.login-maindiv {
+  min-height: 100vh !important;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+form {
+  background-color: white !important;
+  border-radius: 5px !important;
+}
+.left-title {
+  font-size: 80px;
+  font-weight: bold !important;
+  border-top: 10px solid white;
+  color: white !important;
+  border-color: tomato !important;
+}
+.right-title {
+  font-size: 80px;
+  font-weight: bold !important;
+  border-bottom: 10px solid white;
+  border-color: yellow;
+  color: white;
+}
+@media only screen and (max-width: 500px) {
+  .logotext {
+    display: none !important;
+  }
+
+  .search-users {
+    width: "100%";
+  }
+
+  .left-title {
+    font-size: 30px;
+    font-weight: bold !important;
+  }
+}
+
+/* MAX */
+
+.ant-layout .ant-row .ant-col {
+  max-width: 37vw;
 }
