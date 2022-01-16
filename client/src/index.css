@@ -24,10 +24,13 @@ code {
   margin-top: 150px !important;
 }
 input,
-button {
+button,
+textarea {
   border: 1px solid black !important;
 }
-
+input[type="file"] {
+  border: none !important;
+}
 .spinner-border {
   position: fixed !important;
   color: blue;

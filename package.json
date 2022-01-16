@@ -19,6 +19,7 @@
   "homepage": "https://github.com/lukasz-b96/portfolio-app#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.28.1",
     "express": "^4.17.2",
     "mongoose": "^6.1.6",
     "nodemon": "^2.0.15"
