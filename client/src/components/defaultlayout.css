@@ -28,3 +28,34 @@
 .ant-layout-content {
   min-height: 90vh !important;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation1 {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.animation2 {
+  animation: fadeIn 0.6s ease-in-out;
+}
+.animation3 {
+  animation: fadeIn 0.8s ease-in-out;
+}
+.animation4 {
+  animation: fadeIn 1s ease-in-out;
+}
+.animation5 {
+  animation: fadeIn 1.2s ease-in-out;
+}
+.animation6 {
+  animation: fadeIn 2s ease-in-out;
+}

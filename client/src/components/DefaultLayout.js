@@ -1,32 +1,15 @@
 import React from "react";
-import { Layout, Menu } from "antd";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-} from "@ant-design/icons";
+import { Layout } from "antd";
+
 import { Link } from "react-router-dom";
 import "./defaultlayout.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-const { Header, Sider, Content } = Layout;
+const { Header, Content } = Layout;
 
 class DefaultLayout extends React.Component {
-  state = {
-    collapsed: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
-
   render() {
     return (
       <Layout>
@@ -35,28 +18,30 @@ class DefaultLayout extends React.Component {
             <Navbar bg="dark" variant="dark">
               <Nav className="container-fluid">
                 <Nav.Item>
-                  <Navbar.Brand as={Link} to="/">
+                  <Navbar.Brand as={Link} to="/" className="animation1">
                     Lukasz Baran App
                   </Navbar.Brand>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link as={Link} to="/user-list">
+                  <Nav.Link as={Link} to="/user-list" className="animation2">
                     Profil
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link>LogOut</Nav.Link>
+                  <Nav.Link className="animation3">LogOut</Nav.Link>
                 </Nav.Item>
+
                 <Nav.Item className="ml-auto">
                   <Dropdown>
                     <Dropdown.Toggle
                       id="dropdown-button-dark-example1"
                       variant="secondary"
+                      className="animation5"
                     >
                       Dropdown Button
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu variant="dark">
+                    <Dropdown.Menu variant="dark" className="animation2">
                       <Dropdown.Item href="/">
                         {/* active atribute */}
                         Home
@@ -88,7 +73,7 @@ class DefaultLayout extends React.Component {
             </div>*/}
           </Header>
           <Content
-            className="site-layout-background mt-4"
+            className="site-layout-background mt-4 animation6"
             style={
               {
                 // margin: "24px 16px",
