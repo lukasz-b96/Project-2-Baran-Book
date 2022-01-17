@@ -9,9 +9,21 @@ import {
 } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal, Row, Col, Input } from "antd";
-const { TextArea } = Input;
+import { getAllPosts, likeOrUnlikePost } from "../redux/actions/postActions";
 
+const { TextArea } = Input;
 function Post({ post }) {
+  const dispatch = useDispatch();
+  const currentuser = JSON.parse(localStorage.getItem("user"));
+  const alreadyLiked = post.likes.find(
+    (obj) => obj.user.toString() == currentuser._id
+  );
+
+  const { likeOrUnlikeLoading } = useSelector((state) => state.alertsReducer);
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, [likeOrUnlikeLoading]);
+
   // return <div>{posts["post"].description}</div>;
   return (
     <div className="bs1 p-2 mt-4">
@@ -50,12 +62,17 @@ function Post({ post }) {
       {/*  */}
       <div className="d-flex align-items-center">
         <div className="d-flex align-items-center mr-3">
-          <HeartFilled />
+          <HeartFilled
+            style={{ color: alreadyLiked ? "red" : "grey" }}
+            onClick={() => {
+              dispatch(likeOrUnlikePost({ postid: post._id }));
+            }}
+          />
           <p>{post.likes.length}</p>
         </div>
         <div className="d-flex align-items-center">
           <CommentOutlined />
-          <p>{post.likes.length}</p>
+          <p>{post.comments.length}</p>
         </div>
       </div>
     </div>

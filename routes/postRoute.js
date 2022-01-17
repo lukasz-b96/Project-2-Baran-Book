@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { cloudinary } = require("../cloudinary");
 const Post = require("../models/postModel");
+const moment = require("moment");
+
 router.post("/addpost", async (req, res) => {
   try {
     const uploadResponse = await cloudinary.v2.uploader.upload(req.body.image, {
@@ -30,6 +32,41 @@ router.get("/getallposts", async (req, res) => {
       .exec();
     res.send(posts);
   } catch (error) {
+    return res.status(400).json(error);
+  }
+});
+
+router.post("/likeorunlikepost", async (req, res) => {
+  try {
+    const post = await Post.findOne({ _id: req.body.postid });
+
+    //console.log(req.body);
+    //console.log(post);
+    var likes = post.likes;
+    console.log(likes);
+
+    if (likes.find((obj) => obj.user == req.body.userid)) {
+      const temp = likes.filter(
+        (obj) => obj.user.toString() !== req.body.userid
+      );
+
+      post.likes = temp;
+      await Post.updateOne({ _id: req.body.postid }, post);
+      res.send("Post unliked successfully");
+    } else {
+      likes.push({
+        user: req.body.userid,
+        date: moment().format("MMM DD yyyy"),
+      });
+
+      post.likes = likes;
+
+      await Post.updateOne({ _id: req.body.postid }, post);
+
+      res.send("Post liked successfully");
+    }
+  } catch (error) {
+    console.log(error);
     return res.status(400).json(error);
   }
 });

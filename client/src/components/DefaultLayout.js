@@ -27,8 +27,10 @@ class DefaultLayout extends React.Component {
                     Profil
                   </Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link className="animation3">LogOut</Nav.Link>
+                <Nav.Item onClick={() => localStorage.removeItem("user")}>
+                  <Nav.Link as={Link} to="/login" className="animation3">
+                    LogOut
+                  </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item className="ml-auto">

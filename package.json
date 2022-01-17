@@ -21,6 +21,7 @@
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.28.1",
     "express": "^4.17.2",
+    "moment": "^2.29.1",
     "mongoose": "^6.1.6",
     "nodemon": "^2.0.15"
   }
