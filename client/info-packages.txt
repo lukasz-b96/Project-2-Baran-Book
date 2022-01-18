@@ -1,0 +1,26 @@
+npm i react-router-dom antd redux react-redux redux-thunk axios
+1. react-router-dom
+
+2. antd - ui framework
+
+3. redux
+It is a Predictable State Container for JS Apps.
+Predictable --> because it helps you write applications that behave consistently, 
+and can run in different environments (client, server, and native).
+    Centralized --> because of this feature, 
+    we don't need to lift state to parent components 
+    and we can use state from any component we want due to this centralized behavior.
+    Debuggable --> There is an extension called Redux DevTools 
+    which is an excellent tool to debug Redux applications. 
+    Using this tool you can see when, where, why, and how your application's state changed.
+    Flexible --> because it works with any UI layer, and has a large ecosystem of addons.
+
+4. react-redux -  It allows React components to read data from a Redux Store, 
+and dispatch Actions to the Store to update data. 
+
+5.redux-thunk - middleware for Redux.
+
+6. axios - Axios is a promise-based HTTP Client for node.js and the browser.
+It is isomorphic (= it can run in the browser and nodejs with the same codebase).
+On the server-side it uses the native node.js http module, 
+while on the client (browser) it uses XMLHttpRequests.
