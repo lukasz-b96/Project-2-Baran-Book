@@ -7,7 +7,7 @@ const postRoute = require("./routes/postRoute");
 
 app.use(express.json({ limit: "15mb" }));
 app.use(express.urlencoded({ limit: "15mb", extended: true }));
-
+const path = require("path");
 app.use("/api/users/", userRoute);
 app.use("/api/posts/", postRoute);
 
