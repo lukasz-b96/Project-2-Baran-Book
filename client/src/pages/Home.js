@@ -5,7 +5,6 @@ import { Col, Row } from "antd";
 import Post from "../components/Post";
 
 function Home() {
-  const { users } = useSelector((state) => state.userReducer);
   const { posts } = useSelector((state) => state.postsReducer);
   return (
     <DefaultLayout>
