@@ -58,7 +58,9 @@ function Addpost() {
               <Input type="file" onChange={handleFileInput}></Input>
             </Form.Item>
 
-            <div>{image !== "" && <img src={image} className="image" />}</div>
+            <div>
+              {image !== "" && <img src={image} className="postimage2 mr-3" />}
+            </div>
             <Button type="primary" htmlType="submit">
               Post
             </Button>

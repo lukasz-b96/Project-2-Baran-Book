@@ -29,3 +29,45 @@ export const userLogin = (values) => async (dispatch) => {
     message.error("login failed");
   }
 };
+
+export const getAllUsers = (values) => async (dispatch) => {
+  dispatch({ type: "LOADING", payload: true });
+
+  try {
+    const response = await axios.get("/api/users/getallusers");
+    dispatch({ type: "LOADING", payload: false });
+    dispatch({ type: "GET_ALL_USERS", payload: response.data });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: "LOADING", payload: false });
+    message.error("something went wrong");
+  }
+};
+
+export const followUser = (values) => async (dispatch) => {
+  dispatch({ type: "FOLLOW_LOADING", payload: true });
+
+  try {
+    const response = await axios.post("/api/users/followuser", values);
+    dispatch({ type: "FOLLOW_LOADING", payload: false });
+    message.success("Followed successfully");
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: "FOLLOW_LOADING", payload: false });
+    message.error("something went wrong");
+  }
+};
+
+export const unfollowUser = (values) => async (dispatch) => {
+  dispatch({ type: "UNFOLLOW_LOADING", payload: true });
+
+  try {
+    const response = await axios.post("/api/users/unfollowuser", values);
+    dispatch({ type: "UNFOLLOW_LOADING", payload: false });
+    message.success("UnFollowed successfully");
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: "UnFOLLOW_LOADING", payload: false });
+    message.error("something went wrong");
+  }
+};

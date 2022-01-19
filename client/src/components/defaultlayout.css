@@ -20,13 +20,23 @@
   background: #fff;
 }
 
+.postimage {
+  max-height: 34vw;
+  max-width: 34vw !important;
+  margin-top: 10px;
+}
+.ant-col .postimage2 {
+  max-height: 30vw;
+  max-width: 30vw !important;
+  margin-bottom: 10px;
+}
 .ant-layout-header div span svg {
   height: 25px !important;
   width: 25px !important;
 }
 
 .ant-layout-content {
-  min-height: 90vh !important;
+  min-height: 93vh !important;
 }
 
 @keyframes fadeIn {
@@ -58,4 +68,94 @@
 }
 .animation6 {
   animation: fadeIn 2s ease-in-out;
+}
+
+@media only screen and (max-width: 700px) {
+  .logotext {
+    display: none !important;
+  }
+
+  .search-users {
+    width: "100%";
+  }
+
+  .left-title {
+    font-size: 30px;
+    font-weight: bold !important;
+  }
+
+  button#dropdown {
+    max-width: 50%;
+    max-height: 50%;
+    margin-right: 15px;
+  }
+
+  button#dropdown span {
+    display: none;
+  }
+  button#dropdown img {
+    margin-right: 20px;
+    padding-right: 10px;
+  }
+
+  .dropdown .dropdown-menu {
+    margin-left: 3px;
+    min-width: 20px !important;
+  }
+  .dropdown .dropdown-menu .dropdown-item {
+    max-width: 20px !important;
+    max-height: 40px !important;
+    padding-right: 50px;
+  }
+  .dropdown-item img {
+    margin-bottom: 40px;
+    padding-right: 50px;
+  }
+
+  .dropdown-menu span {
+    display: none;
+  }
+  .username {
+    font-size: 11px;
+  }
+  .card {
+    width: 450px !important;
+  }
+  .logo {
+    width: 150px !important;
+  }
+}
+
+.logo {
+  margin-left: 6vw !important;
+  width: 280px; /* you can use % */
+  height: auto;
+}
+
+.card {
+  width: 700px;
+  text-align: left;
+  margin-right: 5px;
+}
+/* About  */
+.aboutme {
+  margin-top: 10px;
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+li img {
+  margin-bottom: 2px;
+}
+li span,
+li a {
+  color: black;
+  text-decoration: none;
+  margin-left: 5px;
+}
+li a:hover {
+  color: black;
 }

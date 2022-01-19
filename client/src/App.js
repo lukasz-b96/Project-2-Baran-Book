@@ -15,6 +15,9 @@ import Login from "./pages/Login";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getAllPosts } from "./redux/actions/postActions";
+import AllUsers from "./pages/AllUsers";
+import MyFollowers from "./pages/MyFollowers";
+import About from "./pages/About";
 
 function App() {
   const { loading, likeOrUnlikeLoading } = useSelector(
@@ -39,6 +42,9 @@ function App() {
             <Route path="/" exact element={<Home />} />
             <Route path="/profile" exact element={<Profile />} />
             <Route path="/addpost" exact element={<Addpost />} />
+            <Route path="/allusers" exact element={<AllUsers />} />
+            <Route path="/myfollowers" exact element={<MyFollowers />} />
+            <Route path="/about" exact element={<About />} />
           </Route>
 
           <Route path="/login" exact element={<Login />} />
