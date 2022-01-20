@@ -13,40 +13,42 @@ function Login() {
   }
   return (
     <div className="register-login">
-      <div className="d-flex align-items-center justify-content-center">
-        <img
-          className="mb-5  logo2"
-          src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
-        />
-      </div>
-      <Row justify="center">
-        <Col lg={6} xs={15}>
-          <Form layout="vertical" className="bs1 p-4" onFinish={login}>
-            <h3>Login</h3>
-            <hr></hr>
-            <Form.Item
-              label="Username"
-              name="username"
-              rules={[{ required: true }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[{ required: true }]}
-            >
-              <Input />
-            </Form.Item>
+      <div className="card-main">
+        <div className="d-flex align-items-center justify-content-center">
+          <img
+            className="  logo2"
+            src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
+          />
+        </div>
 
-            <div>
-              <Button htmlType="submit">Login</Button>
-            </div>
+        <Form layout="vertical" className="bs1 p-4" onFinish={login}>
+          <h3>Login</h3>
+          <hr></hr>
+          <Form.Item
+            label="Username"
+            name="username"
+            rules={[{ required: true }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[{ required: true }]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <div>
+            <Button htmlType="submit">Login</Button>
+          </div>
+          <div className="pt-3">
             <Link to="/register">Click here to Register</Link>
-          </Form>
-        </Col>
-      </Row>
-      <span className="mt-2 mb-1"></span>
+          </div>
+        </Form>
+
+        <span className="mt-2 mb-1"></span>
+      </div>
     </div>
   );
 }
