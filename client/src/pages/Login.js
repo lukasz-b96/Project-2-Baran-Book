@@ -15,12 +15,12 @@ function Login() {
     <div className="register-login">
       <div className="d-flex align-items-center justify-content-center">
         <img
-          className="mb-5 mt-5"
+          className="mb-5 mt-5 logo2"
           src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
         />
       </div>
       <Row justify="center">
-        <Col lg={10} xs={24}>
+        <Col lg={6} xs={15}>
           <Form layout="vertical" className="bs1 p-4" onFinish={login}>
             <h3>Login</h3>
             <hr></hr>

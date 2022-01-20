@@ -71,6 +71,10 @@
   width: 280px; /* you can use % */
   height: auto;
 }
+.logo2 {
+  width: 350px; /* you can use % */
+  height: auto;
+}
 .dropdown-toggle {
   background-color: #25568f !important;
 }
