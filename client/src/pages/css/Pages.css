@@ -63,4 +63,10 @@ li a:hover {
     min-width: 80vw !important;
     width: 80vw !important;
   }
+  ul li a {
+    font-size: 10px;
+  }
+  ul li img {
+    width: 12px;
+  }
 }

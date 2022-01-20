@@ -70,7 +70,8 @@
   height: auto;
 }
 .dropdown-toggle {
-  background-color: #25568f !important;
+  color: black;
+  background-color: #185fb1 !important;
 }
 .dropdown-toggle:hover {
   background-color: #0064d6 !important;
@@ -152,8 +153,19 @@
   }
 
   .postimage {
-    min-width: 81vw !important;
-    max-width: 81vw !important;
+    min-width: 75vw !important;
+    max-width: 75vw !important;
     max-height: 100% !important;
+  }
+  button#dropdown {
+    max-width: 40px !important;
+    display: flex;
+    margin-right: 25vw;
+    padding-right: 40px;
+
+    top: 4%;
+  }
+  button#dropdown img {
+    padding-right: 2px;
   }
 }
