@@ -26,14 +26,14 @@ function Login() {
             <hr></hr>
             <Form.Item
               label="Username"
-              name="Username"
+              name="username"
               rules={[{ required: true }]}
             >
               <Input />
             </Form.Item>
             <Form.Item
               label="Password"
-              name="Password"
+              name="password"
               rules={[{ required: true }]}
             >
               <Input />

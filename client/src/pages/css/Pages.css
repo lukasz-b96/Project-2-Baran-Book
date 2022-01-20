@@ -25,6 +25,15 @@ li a:hover {
   text-align: left;
   margin-right: 5px;
 }
+.card-main {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  min-height: 100%;
+  max-width: 40vw !important;
+  max-height: 100%;
+}
 
 .ant-col .postimage2 {
   max-height: 30vw;
@@ -38,7 +47,12 @@ li a:hover {
   background-image: linear-gradient(to top, #001f85 0%, #007185 50%);
 }
 @media only screen and (max-width: 700px) {
-  card {
-    width: 450px !important;
+  .card-main {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    min-width: 85vw !important;
+    width: 85vw !important;
+    height: 100%;
   }
 }

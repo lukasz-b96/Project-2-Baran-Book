@@ -8,14 +8,15 @@ function Home() {
   const { posts } = useSelector((state) => state.postsReducer);
   return (
     <DefaultLayout>
-      <Row justify="center">
-        {console.log(posts)}
-        <Col lg={12} xs={24}>
-          {posts.map((post, index) => {
-            return <Post key={index} post={post} />;
-          })}
-        </Col>
-      </Row>
+      <div className="m-3">
+        {posts.map((post, index) => {
+          return (
+            <div key={index} className="card-main">
+              <Post post={post} />
+            </div>
+          );
+        })}
+      </div>
     </DefaultLayout>
   );
 }
