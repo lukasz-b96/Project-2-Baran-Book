@@ -1,4 +1,3 @@
-//rfce react function components export
 import { Row, Card, Collapse } from "antd";
 import React from "react";
 import DefaultLayout from "../components/DefaultLayout";

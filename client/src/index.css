@@ -58,40 +58,6 @@ form {
   background-color: white !important;
   border-radius: 5px !important;
 }
-.left-title {
-  font-size: 80px;
-  font-weight: bold !important;
-  border-top: 10px solid white;
-  color: white !important;
-  border-color: tomato !important;
-}
-.right-title {
-  font-size: 80px;
-  font-weight: bold !important;
-  border-bottom: 10px solid white;
-  border-color: yellow;
-  color: white;
-}
-@media only screen and (max-width: 700px) {
-  .logotext {
-    display: none !important;
-  }
-
-  .left-title {
-    font-size: 30px;
-    font-weight: bold !important;
-  }
-  .ds1 {
-    color: black;
-    margin: 5px !important;
-    font-size: 10px;
-  }
-  .anticon svg {
-    font-size: 10px !important;
-  }
-}
-
-/* MAX */
 
 .ant-layout .ant-row .ant-col {
   max-width: 37vw;
@@ -115,3 +81,52 @@ form {
 .bs1 .following {
   background-color: #0064d6;
 }
+
+.left-title {
+  font-size: 80px;
+  font-weight: bold !important;
+  border-top: 10px solid white;
+  color: white !important;
+  border-color: tomato !important;
+}
+.right-title {
+  font-size: 80px;
+  font-weight: bold !important;
+  border-bottom: 10px solid white;
+  border-color: yellow;
+  color: white;
+}
+.card-main {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  min-height: 100%;
+  max-width: 40vw !important;
+  max-height: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .logotext {
+    display: none !important;
+  }
+
+  .left-title {
+    font-size: 30px;
+    font-weight: bold !important;
+  }
+
+  .anticon svg {
+    font-size: 10px !important;
+  }
+  .card-main {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    min-width: 85vw !important;
+    width: 85vw !important;
+    height: 100%;
+  }
+}
+
+/* MAX */

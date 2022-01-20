@@ -30,26 +30,24 @@ function AddPost() {
 
   return (
     <DefaultLayout>
-      <Row justify="center">
-        <Col lg={12}>
-          <Form className="bs1 p-3 mt-5" layout="vertical" onFinish={addpost}>
-            <h3>Add new Post</h3>
-            <Form.Item name="description" label="Description">
-              <TextArea></TextArea>
-            </Form.Item>
-            <Form.Item name="image" label="Image" rules={[{ required: true }]}>
-              <Input type="file" onChange={handleFileInput}></Input>
-            </Form.Item>
+      <div className="card-main">
+        <Form className="bs1 p-3 mt-5" layout="vertical" onFinish={addpost}>
+          <h3>Add new Post</h3>
+          <Form.Item name="description" label="Description">
+            <TextArea></TextArea>
+          </Form.Item>
+          <Form.Item name="image" label="Image" rules={[{ required: true }]}>
+            <Input type="file" onChange={handleFileInput}></Input>
+          </Form.Item>
 
-            <div>
-              {image !== "" && <img src={image} className="postimage2 mr-3" />}
-            </div>
-            <Button type="primary" htmlType="submit">
-              Post
-            </Button>
-          </Form>
-        </Col>
-      </Row>
+          <div>
+            {image !== "" && <img src={image} className="postimage2 mr-3" />}
+          </div>
+          <Button type="primary" htmlType="submit">
+            Post
+          </Button>
+        </Form>
+      </div>
     </DefaultLayout>
   );
 }
