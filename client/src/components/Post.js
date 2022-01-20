@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import moment from "moment";
-import {
-  HeartFilled,
-  CommentOutlined,
-  DeleteOutlined,
-  EditOutlined,
-} from "@ant-design/icons";
+import { HeartFilled } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Modal, Row, Col, Input } from "antd";
+import { Input } from "antd";
 import { getAllPosts, likeOrUnlikePost } from "../redux/actions/postActions";
-
+import "./css/Components.css";
 const { TextArea } = Input;
 function Post({ post }) {
   const dispatch = useDispatch();
@@ -24,7 +18,6 @@ function Post({ post }) {
     dispatch(getAllPosts());
   }, [likeOrUnlikeLoading]);
 
-  // return <div>{posts["post"].description}</div>;
   return (
     <div className="bs1  p-2 mt-4">
       <div className="d-flex align-items-center">
@@ -32,16 +25,15 @@ function Post({ post }) {
           className="username ml-2"
           src="https://img.icons8.com/plumpy/25/000000/username.png"
         />
-        <span className="username ml-2 mr-2">{currentuser.username}</span>
+        <span className="username ml-2 mr-2">{post.user.username}</span>
       </div>
-      {/*  */}
+
       <img src={post.image} className="postimage " />
-      {/*  */}
 
       <div className="m-auto">
         <p className="ds1 mt1 mb-1 text-left">{post.description}</p>
       </div>
-      {/*  */}
+
       <div className="d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center mr-3">
           <HeartFilled

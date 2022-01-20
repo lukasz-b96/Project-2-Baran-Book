@@ -2,12 +2,12 @@
 import { Form, Col, Row, Input, Button } from "antd";
 import React, { useState } from "react";
 import DefaultLayout from "../components/DefaultLayout";
-import "./Addpost.css";
 import { useDispatch } from "react-redux";
 import { addPost } from "../redux/actions/postActions";
+import "./css/Pages.css";
 const { TextArea } = Input;
 
-function Addpost() {
+function AddPost() {
   //hook
   const [image, setimage] = useState("");
   const dispatch = useDispatch();
@@ -21,8 +21,6 @@ function Addpost() {
       setimage(reader.result);
     };
   }
-
-  const validImage = new RegExp(/\.(jpg|jpeg|png)$/);
 
   function addpost(values) {
     values.image = image;
@@ -39,22 +37,7 @@ function Addpost() {
             <Form.Item name="description" label="Description">
               <TextArea></TextArea>
             </Form.Item>
-            <Form.Item
-              name="image"
-              label="Image"
-              rules={[
-                { required: true },
-                () => ({
-                  validator(_, value) {
-                    // console.log(_);
-                    if (validImage.test(value)) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject(new Error("It is not an image!"));
-                  },
-                }),
-              ]}
-            >
+            <Form.Item name="image" label="Image" rules={[{ required: true }]}>
               <Input type="file" onChange={handleFileInput}></Input>
             </Form.Item>
 
@@ -71,4 +54,4 @@ function Addpost() {
   );
 }
 
-export default Addpost;
+export default AddPost;

@@ -1,33 +1,19 @@
-import { Button, Col, Row, Input } from "antd";
+import { Button, Col } from "antd";
 import moment from "moment";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import DefaultLayout from "../components/DefaultLayout";
+import "./css/Components.css";
 import {
   followUser,
   getAllUsers,
   unfollowUser,
 } from "../redux/actions/userActions";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  LogoutOutlined,
-  UserAddOutlined,
-  CheckOutlined,
-} from "@ant-design/icons";
-const { TextArea } = Input;
 
 function User({ user }) {
-  const { users } = useSelector((state) => state.usersReducer);
   const currentUser = JSON.parse(localStorage.getItem("user"));
   const { followLoading, unfollowLoading } = useSelector(
     (state) => state.alertsReducer
   );
-  const [searchKey, setSearchKey] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,14 +23,21 @@ function User({ user }) {
     <div>
       {currentUser._id !== user._id && (
         <Col lg={5} xs={24} className="text-left">
-          <div className="bs1 p-2 mt-3">
-            <div>{user.username}</div>
-            <p>{moment(user.createdAt).format("MMM DD yyyy")}</p>
-
+          <div className="bs1 p-3 mt-3">
+            <span className="d-flex justify-content-center mb-2 username">
+              {user.username}
+            </span>
+            <span className="d-flex justify-content-center font-weight-bold disc">
+              User Joined:
+            </span>
+            <span className="d-flex justify-content-center disc">
+              {moment(user.createdAt).format("DD.MM.YYYY HH:mm")}
+            </span>
             {user.followers.find((obj) => obj == currentUser._id) ? (
-              <div className="d-flex">
+              <div className=" mt-2 ">
                 <Button
-                  className="ml-2"
+                  type="primary"
+                  className=" d-flex m-auto bs1 "
                   onClick={() => {
                     dispatch(
                       unfollowUser({
@@ -54,23 +47,25 @@ function User({ user }) {
                     );
                   }}
                 >
-                  UnFollow
+                  Unfollow
                 </Button>
               </div>
             ) : (
-              <Button
-                icon={<UserAddOutlined />}
-                onClick={() => {
-                  dispatch(
-                    followUser({
-                      currentuserid: currentUser._id,
-                      receiveruserid: user._id,
-                    })
-                  );
-                }}
-              >
-                Follow
-              </Button>
+              <div className=" mt-2">
+                <Button
+                  className=" d-flex m-auto bs1 "
+                  onClick={() => {
+                    dispatch(
+                      followUser({
+                        currentuserid: currentUser._id,
+                        receiveruserid: user._id,
+                      })
+                    );
+                  }}
+                >
+                  Follow
+                </Button>
+              </div>
             )}
           </div>
         </Col>

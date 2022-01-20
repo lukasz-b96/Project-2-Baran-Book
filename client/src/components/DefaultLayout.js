@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 
 import { Link } from "react-router-dom";
-import "./defaultlayout.css";
+import "./css/Components.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
@@ -26,7 +26,9 @@ class DefaultLayout extends React.Component {
                         className="ml-2 mr-2 "
                         src="https://img.icons8.com/plumpy/25/000000/username.png"
                       />
-                      {currentuser.username}
+                      <span className="font-weight-bold">
+                        {currentuser.username}
+                      </span>
                     </Navbar.Brand>
                   </Nav.Item>
 
@@ -44,7 +46,7 @@ class DefaultLayout extends React.Component {
                       <Dropdown.Toggle
                         id="dropdown"
                         variant="secondary"
-                        className="animation5"
+                        className="animation4"
                       >
                         <span className="mr-4">Toggle Menu</span>
 
@@ -107,57 +109,11 @@ class DefaultLayout extends React.Component {
                   </Nav.Item>
                 </Nav>
               </Navbar>
-
-              {/* bootstrap classes (equal division)
-            <div className="d-flex justify-content-between align-items-center bs2">
-              <h4 className="ml-2">
-                {JSON.parse(localStorage.getItem("user")).username}
-              </h4>
-              <h2>BaranGram</h2>
-              {React.createElement(
-                this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                {
-                  className: "trigger",
-                  onClick: this.toggle,
-                }
-              )} 
-            </div>*/}
             </Header>
-            <Content
-              className="site-layout-background mt-5 animation6"
-              style={
-                {
-                  // margin: "24px 16px",
-                  // padding: 24,
-                  // minHeight: 280,
-                }
-              }
-            >
-              {/* Pass website to this element as a children */}
+            <Content className="site-layout-background mt-5 animation6">
               {this.props.children}
             </Content>
           </Layout>
-
-          {/* <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          window.location.pathname - change the active tab
-          <Menu
-            theme="dark"
-            mode="inline"
-            defaultSelectedKeys={[window.location.pathname]}
-          >
-            window.location.pathname - for the "key"
-            <Menu.Item key="/" icon={<UserOutlined />}>
-              <Link to="/"> Home</Link>
-            </Menu.Item>
-            <Menu.Item key="/addpost" icon={<VideoCameraOutlined />}>
-              <Link to="/addpost">Add Post</Link>
-            </Menu.Item>
-            <Menu.Item key="/profile" icon={<UploadOutlined />}>
-              <Link to="/profile"> Profile</Link>
-            </Menu.Item>
-          </Menu>
-        </Sider> */}
         </Layout>
       </div>
     );

@@ -1,10 +1,8 @@
 //rfce react function components export
-import { Form, Col, Row, Input, Button, Card, Collapse, Panel } from "antd";
-import React, { useState } from "react";
+import { Row, Card, Collapse } from "antd";
+import React from "react";
 import DefaultLayout from "../components/DefaultLayout";
-import "./Addpost.css";
-import { useDispatch } from "react-redux";
-import { addPost } from "../redux/actions/postActions";
+import "./css/Pages.css";
 
 function About() {
   const { Panel } = Collapse;
@@ -16,7 +14,7 @@ function About() {
   return (
     <DefaultLayout>
       <Row justify="center">
-        <Card className="mt-5 card" title="Default size card">
+        <Card className="mt-5 card bs1" title="About This FullStack App">
           <ul className="aboutme justify-content-between">
             <li>
               {img1}
@@ -39,16 +37,22 @@ function About() {
             <li>
               {img1}
               <a>
-                The website allows you to create a unique user with an encrypted
-                password. You have to create a user to use the website.
+                To use this website you have to create a unique user (with
+                encrypted password on LocalStorage)
               </a>
             </li>
             <li>
               {img1}
               <a>
                 Each user can create their own post, give a heart to posts of
-                other users, find other users and follow or unfollow them.
-                Moreover, we can check who follows us.
+                other users and find others.
+              </a>
+            </li>
+            <li>
+              {img1}
+              <a>
+                You can and follow or unfollow other users, moreover, you can
+                check who follows you.
               </a>
             </li>
             <li>
@@ -60,13 +64,17 @@ function About() {
             </li>
             <li>
               {img1}
-              <a>
-                The entire website has been built on antd components and some
-                react-bootstrap styling with custom CSS.
-              </a>
+              <a>Validity of the choosen image is checked by the regex.</a>
             </li>
             <li>
               {img1}
+              <a>
+                Website has been built on Antd components with Bootstrap and
+                custom CSS
+              </a>
+            </li>
+            <li>
+              <img src="https://img.icons8.com/plumpy/24/26e07f/overtime.png" />
               <a>
                 In the future, I am going to add JWT authorization and infinite
                 scrolling.

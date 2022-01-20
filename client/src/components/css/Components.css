@@ -25,11 +25,7 @@
   max-width: 34vw !important;
   margin-top: 10px;
 }
-.ant-col .postimage2 {
-  max-height: 30vw;
-  max-width: 30vw !important;
-  margin-bottom: 10px;
-}
+
 .ant-layout-header div span svg {
   height: 25px !important;
   width: 25px !important;
@@ -70,13 +66,30 @@
   animation: fadeIn 2s ease-in-out;
 }
 
+.logo {
+  margin-left: 6vw !important;
+  width: 280px; /* you can use % */
+  height: auto;
+}
+.dropdown-toggle {
+  background-color: #25568f !important;
+}
+.dropdown-toggle:hover {
+  background-color: #0064d6 !important;
+}
+.dropdown-menu {
+  background-color: #ffffff !important;
+}
+.dropdown-item:hover {
+  background-color: #1175e791 !important;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+
 @media only screen and (max-width: 700px) {
   .logotext {
     display: none !important;
-  }
-
-  .search-users {
-    width: "100%";
   }
 
   .left-title {
@@ -94,7 +107,7 @@
     display: none;
   }
   button#dropdown img {
-    margin-right: 20px;
+    margin-right: 50px;
     padding-right: 10px;
   }
 
@@ -118,44 +131,11 @@
   .username {
     font-size: 11px;
   }
-  .card {
-    width: 450px !important;
-  }
+
   .logo {
     width: 150px !important;
   }
-}
-
-.logo {
-  margin-left: 6vw !important;
-  width: 280px; /* you can use % */
-  height: auto;
-}
-
-.card {
-  width: 700px;
-  text-align: left;
-  margin-right: 5px;
-}
-/* About  */
-.aboutme {
-  margin-top: 10px;
-  padding: 0;
-  list-style-type: none;
-}
-li {
-  margin-right: 20px;
-  margin-bottom: 10px;
-}
-li img {
-  margin-bottom: 2px;
-}
-li span,
-li a {
-  color: black;
-  text-decoration: none;
-  margin-left: 5px;
-}
-li a:hover {
-  color: black;
+  .disc {
+    font-size: 10px;
+  }
 }

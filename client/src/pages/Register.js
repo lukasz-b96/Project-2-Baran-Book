@@ -3,6 +3,7 @@ import { Row, Col, Form, Input, Button } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userRegister } from "../redux/actions/userActions";
+import "./css/Pages.css";
 function Register() {
   const dispatch = useDispatch();
   function register(values) {
@@ -12,54 +13,70 @@ function Register() {
   }
   return (
     <div>
-      <Row justify="center" className="register-div">
-        <Col lg={10} xs={24}>
-          <Form layout="vertical" className="bs1 p-4" onFinish={register}>
-            <h3>Register</h3>
-            <hr></hr>
-            <Form.Item
-              label="username"
-              name="username"
-              rules={[{ required: true }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="password"
-              name="password"
-              rules={[{ required: true }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="confirmpassword"
-              name="cpassword"
-              rules={[
-                { required: true },
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value || getFieldValue("password") === value) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject(
-                      new Error(
-                        "The two passwords that you entered do not match!"
-                      )
-                    );
-                  },
-                }),
-              ]}
-            >
-              <Input />
-            </Form.Item>
+      <div className="register-login ">
+        <div className="d-flex align-items-center justify-content-center">
+          <img
+            className="mb-5 mt-5"
+            src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
+          />
+        </div>
 
-            <div>
-              <Button htmlType="submit">Register</Button>
-            </div>
-            <Link to="/login">Already registered, click here to login</Link>
-          </Form>
-        </Col>
-      </Row>
+        <Row justify="center" className="">
+          <Col lg={10} xs={24}>
+            <Form
+              layout="vertical"
+              className="bs1 p-4 align-items-center"
+              onFinish={register}
+            >
+              <h3>Register</h3>
+              <hr></hr>
+              <Form.Item
+                label="username"
+                name="username"
+                rules={[{ required: true }]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                label="password"
+                name="password"
+                rules={[{ required: true }]}
+              >
+                <Input.Password />
+              </Form.Item>
+              <Form.Item
+                label="Confirm Password"
+                name="cpassword"
+                type="password"
+                rules={[
+                  { required: true },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue("password") === value) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject(
+                        new Error(
+                          "The two passwords that you entered do not match!"
+                        )
+                      );
+                    },
+                  }),
+                ]}
+              >
+                <Input.Password />
+              </Form.Item>
+
+              <div>
+                <Button htmlType="submit">Register</Button>
+              </div>
+              <div className="pt-3">
+                <Link to="/login">Already registered, click here to login</Link>
+              </div>
+            </Form>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 }

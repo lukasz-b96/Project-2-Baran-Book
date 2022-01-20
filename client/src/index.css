@@ -25,23 +25,12 @@ code {
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.ds {
-  color: black;
-  margin: 5px !important;
-  font-size: 25px;
-}
 .ds1 {
   color: black;
   margin: 5px !important;
   font-size: 17px;
 }
-hr.new1 {
-  border-top: 1px solid black;
-}
 
-.register-div {
-  margin-top: 150px !important;
-}
 input,
 button,
 textarea {
@@ -50,14 +39,11 @@ textarea {
 input[type="file"] {
   border: none !important;
 }
-.spinner-border {
-  position: fixed !important;
-  color: blue;
-  top: 60% !important;
-  left: calc(50% - 50px) !important;
-  width: 100px;
-  height: 100px;
-  z-index: 999;
+.ant-input-password {
+  border: 1px solid black !important;
+}
+.ant-input-password .ant-input {
+  border: none !important;
 }
 
 img {
@@ -68,18 +54,12 @@ img {
   font-size: 17px !important;
 }
 
-.search-users {
-  width: "60%";
-}
-.register-maindiv {
+.register-login {
+  padding-top: 150px;
   min-height: 100vh !important;
+  background-image: linear-gradient(to top, #001f85 0%, #007185 50%);
+}
 
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
-.login-maindiv {
-  min-height: 100vh !important;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
 form {
   background-color: white !important;
   border-radius: 5px !important;
@@ -103,10 +83,6 @@ form {
     display: none !important;
   }
 
-  .search-users {
-    width: "100%";
-  }
-
   .left-title {
     font-size: 30px;
     font-weight: bold !important;
@@ -126,21 +102,7 @@ form {
 .ant-layout .ant-row .ant-col {
   max-width: 37vw;
 }
-.dropdown-toggle {
-  background-color: #365981 !important;
-}
-.dropdown-toggle:hover {
-  background-color: #0064d6 !important;
-}
-.dropdown-menu {
-  background-color: #c9c9c9 !important;
-}
-.dropdown-item:hover {
-  background-color: #435a75 !important;
-}
-.dropdown-toggle::after {
-  display: none !important;
-}
+
 .site-layout {
   background-color: #b3b3b3 !important;
 }
@@ -154,4 +116,8 @@ form {
 .username {
   font-size: 25px;
   font-weight: bold;
+}
+
+.bs1 .following {
+  background-color: #0064d6;
 }
