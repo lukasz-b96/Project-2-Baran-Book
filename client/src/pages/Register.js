@@ -39,20 +39,20 @@ function Register() {
               </Form.Item>
               <Form.Item
                 label="Password"
-                name="password"
+                name="Password"
                 rules={[{ required: true }]}
               >
                 <Input.Password />
               </Form.Item>
               <Form.Item
                 label="Confirm Password"
-                name="cpassword"
+                name="Confirm Password"
                 type="password"
                 rules={[
                   { required: true },
                   ({ getFieldValue }) => ({
                     validator(_, value) {
-                      if (!value || getFieldValue("password") === value) {
+                      if (!value || getFieldValue("Password") === value) {
                         return Promise.resolve();
                       }
                       return Promise.reject(
