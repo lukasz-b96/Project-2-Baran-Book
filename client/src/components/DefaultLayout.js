@@ -113,6 +113,7 @@ class DefaultLayout extends React.Component {
             <Content className="site-layout-background mt-5 animation6">
               {this.props.children}
             </Content>
+            <span className="mt-4"></span>
           </Layout>
         </Layout>
       </div>
