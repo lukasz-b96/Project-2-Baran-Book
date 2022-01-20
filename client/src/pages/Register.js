@@ -31,14 +31,14 @@ function Register() {
               <h3>Register</h3>
               <hr></hr>
               <Form.Item
-                label="username"
+                label="Username"
                 name="username"
                 rules={[{ required: true }]}
               >
                 <Input />
               </Form.Item>
               <Form.Item
-                label="password"
+                label="Password"
                 name="password"
                 rules={[{ required: true }]}
               >
