@@ -26,14 +26,14 @@ function Login() {
             <hr></hr>
             <Form.Item
               label="Username"
-              name="username"
+              name="Username"
               rules={[{ required: true }]}
             >
               <Input />
             </Form.Item>
             <Form.Item
               label="Password"
-              name="password"
+              name="Password"
               rules={[{ required: true }]}
             >
               <Input />
@@ -46,6 +46,7 @@ function Login() {
           </Form>
         </Col>
       </Row>
+      <span className="mt-2 mb-1"></span>
     </div>
   );
 }
