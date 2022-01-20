@@ -31,7 +31,7 @@ export const addPost = (values) => async (dispatch) => {
 
 export const getAllPosts = () => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
-
+  console.log("WORKING");
   try {
     const response = await axios.get("/api/posts/getallposts");
     dispatch({ type: "LOADING", payload: false });

@@ -16,18 +16,21 @@ code {
 }
 
 .bs1 {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  border-radius: 15px;
+  box-shadow: rgb(49, 56, 59) 0px 2px 10px 0px, rgb(36, 85, 150) 0px 1px 3px 1px;
+  border-radius: 12px !important;
+  background-color: white;
 }
 .bs2 {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.register-div {
-  margin-top: 150px !important;
+.ds1 {
+  color: black;
+  margin: 5px !important;
+  font-size: 17px;
 }
+
 input,
 button,
 textarea {
@@ -36,71 +39,27 @@ textarea {
 input[type="file"] {
   border: none !important;
 }
-.spinner-border {
-  position: fixed !important;
-  color: blue;
-  top: 60% !important;
-  left: calc(50% - 50px) !important;
-  width: 100px;
-  height: 100px;
-  z-index: 999;
+.ant-input-password {
+  border: 1px solid black !important;
+}
+.ant-input-password .ant-input {
+  border: none !important;
 }
 
-.profilepic1 {
-  padding-left: 15px;
-  padding-right: 10px;
-  font-weight: bold;
-  font-size: 25px !important;
-  background-color: grey;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  color: white;
-  text-align: center !important;
-}
 img {
   border-radius: 10px;
 }
-.postimage {
-  max-height: 35vw;
-  max-width: 35vw !important;
-  margin-top: 10px;
-}
-p {
-  color: grey;
-  margin: 5px !important;
-  font-size: 18px;
-}
+
 .anticon svg {
-  font-size: 18px !important;
-}
-.profilepic2 {
-  height: 50px !important;
-  width: 50px !important;
-  text-transform: uppercase;
-  border-radius: 50%;
-  background-color: grey !important;
-  text-align: center !important;
-  font-size: 35px !important;
-  font-weight: bold !important;
-  color: white !important;
-}
-.postinprofile {
-  height: 200px;
+  font-size: 17px !important;
 }
 
-.search-users {
-  width: "60%";
-}
-.register-maindiv {
+.register-login {
+  padding-top: 150px;
   min-height: 100vh !important;
+  background-image: linear-gradient(to top, #001f85 0%, #007185 50%);
+}
 
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
-.login-maindiv {
-  min-height: 100vh !important;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
 form {
   background-color: white !important;
   border-radius: 5px !important;
@@ -119,18 +78,22 @@ form {
   border-color: yellow;
   color: white;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   .logotext {
     display: none !important;
-  }
-
-  .search-users {
-    width: "100%";
   }
 
   .left-title {
     font-size: 30px;
     font-weight: bold !important;
+  }
+  .ds1 {
+    color: black;
+    margin: 5px !important;
+    font-size: 10px;
+  }
+  .anticon svg {
+    font-size: 10px !important;
   }
 }
 
@@ -138,4 +101,23 @@ form {
 
 .ant-layout .ant-row .ant-col {
   max-width: 37vw;
+}
+
+.site-layout {
+  background-color: #b3b3b3 !important;
+}
+.site-layout-background {
+  background-color: #b3b3b3 !important;
+}
+.bg-dark {
+  background-color: #1a6292 !important;
+}
+
+.username {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.bs1 .following {
+  background-color: #0064d6;
 }

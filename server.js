@@ -2,14 +2,12 @@ const express = require("express");
 
 const app = express();
 const dbConnection = require("./db");
-const userRoute = require("./routes/usersRoute");
-const postRoute = require("./routes/postRoute");
-
-app.use(express.json({ limit: "15mb" }));
-app.use(express.urlencoded({ limit: "15mb", extended: true }));
+const usersRoute = require("./routes/usersRoute");
+const postsRoute = require("./routes/postsRoute");
+app.use(express.json({ limit: "25mb" }));
 const path = require("path");
-app.use("/api/users/", userRoute);
-app.use("/api/posts/", postRoute);
+app.use("/api/users/", usersRoute);
+app.use("/api/posts/", postsRoute);
 
 const port = process.env.PORT || 5000;
 
@@ -21,6 +19,4 @@ if (process.env.NODE_ENV == "production") {
   });
 }
 
-app.listen(port, () =>
-  console.log(`server is running on http://http://localhost:${port} :D`)
-);
+app.listen(port, () => console.log(`Server running on port ${port} `));

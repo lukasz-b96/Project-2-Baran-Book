@@ -6,15 +6,17 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import Addpost from "./pages/Addpost";
-import Profile from "./pages/Profile";
 import "antd/dist/antd.min.css";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getAllPosts } from "./redux/actions/postActions";
+import Home from "./pages/Home";
+import AddPost from "./pages/AddPost";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import AllUsers from "./pages/AllUsers";
+import MyFollowers from "./pages/MyFollowers";
+import About from "./pages/About";
 
 function App() {
   const { loading, likeOrUnlikeLoading } = useSelector(
@@ -37,8 +39,10 @@ function App() {
           {/* react-router-dom version 6  */}
           <Route element={<ProtectedRoute />}>
             <Route path="/" exact element={<Home />} />
-            <Route path="/profile" exact element={<Profile />} />
-            <Route path="/addpost" exact element={<Addpost />} />
+            <Route path="/addpost" exact element={<AddPost />} />
+            <Route path="/allusers" exact element={<AllUsers />} />
+            <Route path="/myfollowers" exact element={<MyFollowers />} />
+            <Route path="/about" exact element={<About />} />
           </Route>
 
           <Route path="/login" exact element={<Login />} />

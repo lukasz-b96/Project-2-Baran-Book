@@ -3,7 +3,7 @@ import { Row, Col, Form, Input, Button } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../redux/actions/userActions";
-
+import "./css/Pages.css";
 function Login() {
   const dispatch = useDispatch();
 
@@ -12,8 +12,14 @@ function Login() {
     dispatch(userLogin(values));
   }
   return (
-    <div>
-      <Row justify="center" className="register-div">
+    <div className="register-login">
+      <div className="d-flex align-items-center justify-content-center">
+        <img
+          className="mb-5 mt-5"
+          src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
+        />
+      </div>
+      <Row justify="center">
         <Col lg={10} xs={24}>
           <Form layout="vertical" className="bs1 p-4" onFinish={login}>
             <h3>Login</h3>
