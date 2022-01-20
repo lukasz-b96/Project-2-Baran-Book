@@ -54,12 +54,6 @@ img {
   font-size: 17px !important;
 }
 
-.register-login {
-  padding-top: 150px;
-  min-height: 100vh !important;
-  background-image: linear-gradient(to top, #001f85 0%, #007185 50%);
-}
-
 form {
   background-color: white !important;
   border-radius: 5px !important;
