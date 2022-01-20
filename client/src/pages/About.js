@@ -87,8 +87,8 @@ function About() {
                 <li>
                   {img2}
                   <a>
-                    Third-year student at the Faculty of Physics, Astrology and
-                    Applied Computer Science
+                    Third-year student of Applied Computer Science at the
+                    Jagiellonian University.
                   </a>
                 </li>
                 <li>
@@ -104,6 +104,10 @@ function About() {
                     Interested in sports, movie editing, traveling and going to
                     concerts.
                   </a>
+                </li>
+                <li>
+                  {img2}
+                  <a>I want to become a Front-End Developer.</a>
                 </li>
               </ul>
             </Panel>
