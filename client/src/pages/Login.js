@@ -46,6 +46,7 @@ function Login() {
           </Form>
         </Col>
       </Row>
+      <span className="mt-2 mb-1"></span>
     </div>
   );
 }

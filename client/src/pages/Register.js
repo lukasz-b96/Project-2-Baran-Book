@@ -77,6 +77,7 @@ function Register() {
           </Col>
         </Row>
       </div>
+      <span className="mt-2 mb-1"></span>
     </div>
   );
 }
