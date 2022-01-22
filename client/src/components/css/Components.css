@@ -61,18 +61,28 @@
 }
 
 .logo {
-  margin-left: 6vw !important;
-  width: 280px; /* you can use % */
-  height: auto;
+  width: 200px; /* you can use % */
 }
+.username2 {
+  font-size: 13;
+  color: black !important;
+}
+.username2:hover {
+  color: rgb(80, 80, 80) !important;
+}
+.disc:hover {
+  color: rgb(80, 80, 80) !important;
+}
+.disc {
+  font-size: 12px;
+  color: black !important;
+}
+
 .logo2 {
   width: 350px; /* you can use % */
   height: auto;
 }
-.dropdown-toggle {
-  color: black;
-  background-color: #185fb1 !important;
-}
+
 .dropdown-toggle:hover {
   background-color: #0064d6 !important;
 }
@@ -85,6 +95,19 @@
 .dropdown-toggle::after {
   display: none !important;
 }
+.dropdown-divider {
+  border-color: black !important;
+  border-style: dashed;
+  scale: transorm();
+}
+.tester {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 20vw;
+  margin-bottom: 100px !important;
+}
 
 .card {
   text-align: left;
@@ -94,6 +117,16 @@
   max-height: 38vw;
   max-width: 38vw !important;
   margin-top: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .tester {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .home {
+    margin-top: 10px !important;
+  }
 }
 @media only screen and (max-width: 700px) {
   .logotext {
@@ -105,44 +138,15 @@
     font-weight: bold !important;
   }
 
-  button#dropdown {
-    max-width: 50%;
-    max-height: 50%;
-    margin-right: 15px;
-  }
-
-  button#dropdown span {
-    display: none;
-  }
-  button#dropdown img {
-    margin-right: 50px;
-    padding-right: 10px;
-  }
-
-  .dropdown .dropdown-menu {
-    margin-left: 3px;
-    min-width: 20px !important;
-  }
-  .dropdown .dropdown-menu .dropdown-item {
-    max-width: 20px !important;
-    max-height: 40px !important;
-    padding-right: 50px;
-  }
-  .dropdown-item img {
-    margin-bottom: 40px;
-    padding-right: 50px;
-  }
-
-  .dropdown-menu span {
-    display: none;
-  }
   .username {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .logo {
-    display: none;
+    width: 80px;
+    top: 4%;
   }
+
   .disc {
     font-size: 11px;
   }
@@ -156,16 +160,5 @@
     min-width: 75vw !important;
     max-width: 75vw !important;
     max-height: 100% !important;
-  }
-  button#dropdown {
-    max-width: 40px !important;
-    display: flex;
-    margin-right: 25vw;
-    padding-right: 40px;
-
-    top: 4%;
-  }
-  button#dropdown img {
-    padding-right: 2px;
   }
 }
