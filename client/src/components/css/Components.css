@@ -61,7 +61,7 @@
 }
 
 .logo {
-  width: 200px; /* you can use % */
+  width: 230px; /* you can use % */
 }
 .username2 {
   font-size: 13;
@@ -143,8 +143,7 @@
   }
 
   .logo {
-    width: 80px;
-    top: 4%;
+    width: 170px;
   }
 
   .disc {
