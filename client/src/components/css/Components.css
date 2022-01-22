@@ -101,12 +101,8 @@
   scale: transorm();
 }
 .tester {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 20vw;
-  margin-bottom: 100px !important;
+  margin: 0 auto;
+  width: 26vw;
 }
 
 .card {
