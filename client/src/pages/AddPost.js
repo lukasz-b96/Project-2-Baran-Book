@@ -43,7 +43,7 @@ function AddPost() {
           <div>
             {image !== "" && <img src={image} className="postimage2 mr-3" />}
           </div>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" className="bs1">
             Post
           </Button>
         </Form>

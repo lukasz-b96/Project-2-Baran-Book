@@ -63,7 +63,7 @@ function About() {
             </li>
             <li>
               {img1}
-              <a>Validity of the choosen image is checked by the regex.</a>
+              <a>Validity of the chosen image is checked by the regex.</a>
             </li>
             <li>
               {img1}

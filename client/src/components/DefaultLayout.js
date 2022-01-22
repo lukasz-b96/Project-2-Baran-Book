@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import "./css/Components.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Container from "react-bootstrap/Container";
 
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -17,102 +19,92 @@ class DefaultLayout extends React.Component {
       <div className="background">
         <Layout>
           <Layout className="site-layout">
-            <Header className="site-layout-background " style={{ padding: 0 }}>
-              <Navbar bg="dark">
-                <Nav className="container-fluid align-items-center justify-content-between">
-                  <Nav.Item>
-                    <Navbar.Brand as={Link} to="/" className="animation1 ">
-                      <img
-                        className="ml-2 mr-2 "
-                        src="https://img.icons8.com/plumpy/25/000000/username.png"
-                      />
-                      <span className="font-weight-bold">
-                        {currentuser.username}
-                      </span>
-                    </Navbar.Brand>
-                  </Nav.Item>
-
-                  <Nav.Item className="nav-toggle ml-auto">
-                    <Navbar.Brand as={Link} to="/" className="animation3">
-                      <img
-                        className="username ml-2 mr-2 logo"
-                        src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
-                      />
-                    </Navbar.Brand>
-                  </Nav.Item>
-
-                  <Nav.Item className="nav-toggle ml-auto">
-                    <Dropdown>
-                      <Dropdown.Toggle
-                        id="dropdown"
-                        variant="secondary"
-                        className="animation4"
-                      >
-                        <span className="mr-4">Toggle Menu</span>
-
-                        <img
-                          src="https://img.icons8.com/plumpy/24/26e07f/drag-list-down.png"
-                          alt="pic"
-                        />
-                      </Dropdown.Toggle>
-
-                      <Dropdown.Menu variant="dark" className="animation2">
-                        <Dropdown.Item href="/">
-                          <img
-                            src="https://img.icons8.com/plumpy/24/26e07f/home--v1.png"
-                            alt="pic"
-                          />
-                          <span className="ml-2">Home</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item href="/about">
-                          <img
-                            src="https://img.icons8.com/plumpy/24/26e07f/info.png"
-                            alt="pic"
-                          />
-                          <span className="ml-2">About</span>
-                        </Dropdown.Item>
-
-                        <Dropdown.Item href="/addpost">
-                          <img
-                            src="https://img.icons8.com/plumpy/23/26e07f/upload-2.png"
-                            alt="pic"
-                          />
-                          <span className="ml-2">Add Post</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item href="/allusers">
-                          <img
-                            src="https://img.icons8.com/plumpy/24/000000/add-user-male.png"
-                            alt="pic"
-                          />
-
-                          <span className="ml-2">Find Users</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item href="/myfollowers">
-                          <img
-                            src="https://img.icons8.com/plumpy/24/26e07f/myspace.png"
-                            alt="pic"
-                          />
-                          <span className="ml-2">My Followers</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          onClick={() => localStorage.removeItem("user")}
-                          href="/login"
-                        >
-                          <img
-                            src="https://img.icons8.com/plumpy/24/26e07f/shutdown.png"
-                            alt="pic"
-                          />
-                          <span className="ml-2">Log Out</span>
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Nav.Item>
+            <Navbar
+              collapseOnSelect
+              expand="lg"
+              bg="dark"
+              variant="dark"
+              class=" container-fluid align-items-center justify-content-between"
+            >
+              <Navbar.Brand href="/">
+                <img
+                  className="ml-2 mr-2 logo"
+                  src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
+                />
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="me-auto">
+                  <Nav.Link href="/">
+                    <img
+                      className="mr-2 "
+                      src={`${process.env.PUBLIC_URL}/assets/images/Username.png`}
+                    />
+                    <span className="font-weight-bold username2">
+                      {currentuser.username}
+                    </span>
+                  </Nav.Link>
+                  <Nav.Link
+                    onClick={() => localStorage.removeItem("user")}
+                    href="/login"
+                  >
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/images/Shutdown.png`}
+                      alt="pic"
+                    />
+                    <span className="ml-2 font-weight-bold disc">Log Out</span>
+                  </Nav.Link>
                 </Nav>
-              </Navbar>
-            </Header>
+                <div className="tester">
+                  <NavDropdown.Divider />
+                </div>
+
+                <Nav className="ml-auto home">
+                  <Nav.Link href="/">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/images/Home.png`}
+                      alt="pic"
+                    />
+                    <span className="ml-2 disc">Home</span>
+                  </Nav.Link>
+
+                  <Nav.Link href="/about">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/images/Info.png`}
+                      alt="pic"
+                    />
+                    <span className="ml-2 disc">About</span>
+                  </Nav.Link>
+                  <Nav.Link href="/addpost">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/images/Upload.png`}
+                      alt="pic"
+                    />
+                    <span className="ml-2 disc">Add Post</span>
+                  </Nav.Link>
+                  <Nav.Link href="/allusers">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/images/User.png`}
+                      alt="pic"
+                    />
+
+                    <a className="ml-2 disc">Find Users</a>
+                  </Nav.Link>
+                  <Nav.Link href="/myfollowers">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/images/Followers.png`}
+                      alt="pic"
+                    />
+                    <span className="ml-2 disc">My Followers</span>
+                  </Nav.Link>
+                  <Nav.Link href="/"></Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
             <Content className="site-layout-background mt-5 animation6">
               {this.props.children}
             </Content>
+
             <span className="mt-4"></span>
           </Layout>
         </Layout>
