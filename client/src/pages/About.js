@@ -13,7 +13,7 @@ function About() {
   return (
     <DefaultLayout>
       <Row justify="center">
-        <Card className="mt-5 card bs1" title="About This FullStack App">
+        <Card className="mt-2 card bs1" title="About This FullStack App">
           <ul className="aboutme justify-content-between">
             <li>
               {img1}
@@ -80,7 +80,7 @@ function About() {
               </a>
             </li>
           </ul>
-          <Collapse defaultActiveKey={["1"]}>
+          <Collapse >
             <Panel header="About Me" key="1">
               <ul className="aboutme ">
                 <li>
@@ -114,13 +114,13 @@ function About() {
               <ul className="aboutme ">
                 <li>
                   {img3}
-                  <a>Good knowledge in: Python, HTML, CSS, NodeJs</a>
+                  <a>Good knowledge in: Python, HTML, CSS</a>
                 </li>
                 <li>
                   {img3}
                   <a>
                     Medium knowledge of: C/C++, JavaScript, Java, SQL, GIT,
-                    Bootstrap, Antd
+                    Bootstrap, Antd, EJS, NodeJs
                   </a>
                 </li>
                 <li>
