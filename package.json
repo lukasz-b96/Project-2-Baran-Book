@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-app",
+  "name": "baran-book",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,16 +15,9 @@
     "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lukasz-b96/portfolio-app.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lukasz-b96/portfolio-app/issues"
-  },
-  "homepage": "https://github.com/lukasz-b96/portfolio-app#readme",
+  "homepage": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.28.1",
