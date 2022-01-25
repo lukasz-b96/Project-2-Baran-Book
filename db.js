@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    `mongodb+srv://lukasz:mkCTXxr3dwjtc37@cluster0.mibmb.mongodb.net/test`,
+    process.env.MDB_URI,
     { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .catch((error) => console.log("db auth error"));
