@@ -50,7 +50,7 @@ export const followUser = (values) => async (dispatch) => {
   try {
     await axios.post("/api/users/followuser", values);
     dispatch({ type: "FOLLOW_LOADING", payload: false });
-    message.success("Followed successfully");
+    message.success("Follow success");
   } catch (error) {
     console.log(error);
     dispatch({ type: "FOLLOW_LOADING", payload: false });
@@ -64,10 +64,10 @@ export const unfollowUser = (values) => async (dispatch) => {
   try {
     await axios.post("/api/users/unfollowuser", values);
     dispatch({ type: "UNFOLLOW_LOADING", payload: false });
-    message.success("UnFollowed successfully");
+    message.success("Unfollow success");
   } catch (error) {
     console.log(error);
-    dispatch({ type: "UnFOLLOW_LOADING", payload: false });
+    dispatch({ type: "UNFOLLOW_LOADING", payload: false });
     message.error("something went wrong");
   }
 };
