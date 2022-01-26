@@ -58,12 +58,12 @@ class DefaultLayout extends React.Component {
                 </div>
 
                 <Nav className="ml-auto home">
-                  <Nav.Link href="/">
+                  <Nav.Link href="https://sahara-car-deals.herokuapp.com/">
                     <img
-                      src={`${process.env.PUBLIC_URL}/assets/images/Home.png`}
+                      src={`${process.env.PUBLIC_URL}/assets/images/Car.png`}
                       alt="pic"
                     />
-                    <span className="ml-2 disc">Home</span>
+                    <span className="ml-2 disc">Car Deals - Portfolio2 </span>
                   </Nav.Link>
 
                   <Nav.Link href="/about">
