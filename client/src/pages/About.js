@@ -155,12 +155,12 @@ function About() {
                   {img3}
                   <span>
                     Medium knowledge of: C/C++, JavaScript, Java, SQL, GIT,
-                    Bootstrap, Antd, EJS, NodeJs
+                    Bootstrap, Antd, EJS, NodeJS
                   </span>
                 </li>
                 <li>
                   {img3}
-                  <span>Basics of: Angular, React </span>
+                  <span>Basics of: AngularJS, ReactJS </span>
                 </li>
               </ul>
             </Panel>
