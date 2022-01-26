@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { cloudinary } = require("../cloudinary");
+const { cloudinary } = require("../../cloudinary");
 const Post = require("../models/postModel");
 const moment = require("moment");
 

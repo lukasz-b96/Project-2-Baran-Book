@@ -13,100 +13,111 @@ function About() {
   return (
     <DefaultLayout>
       <Row justify="center">
-        <Card className="mt-2 card bs1" title="About This FullStack App">
+        <Card className=" card bs1" title="About This FullStack App">
           <ul className="aboutme justify-content-between">
             <li>
               {img1}
-              <a>Sample web application deployed on Heroku. </a>
+              <span>Sample web application deployed on Heroku. </span>
             </li>
             <li>
               {img1}
-              <a>
+              <span>
                 App created on MERN stack solution (MongoDB, Express.js,
                 ReactJS, and Node.js)
-              </a>
+              </span>
             </li>
             <li>
               {img1}
-              <a>
-                The server sends pictures as Base64 to "Cloudinary" and hosting
-                response with URL link.
-              </a>
-            </li>
-            <li>
-              {img1}
-              <a>
+              <span>
                 To use this website you have to create a unique user (with
                 encrypted password on LocalStorage)
-              </a>
+              </span>
             </li>
             <li>
               {img1}
-              <a>
+              <span>
                 Each user can create their own post, give a heart to posts of
                 other users and find others.
-              </a>
+              </span>
             </li>
             <li>
               {img1}
-              <a>
+              <span>
+                The server sends pictures as Base64 to "Cloudinary" and hosting
+                response with URL link.
+              </span>
+            </li>
+            <li>
+              {img1}
+              <span>
                 You can and follow or unfollow other users, moreover, you can
                 check who follows you.
-              </a>
+              </span>
             </li>
             <li>
               {img1}
-              <a>
+              <span>
                 For each post, you need to add a photo but the description is
                 not necessary.
-              </a>
+              </span>
             </li>
             <li>
               {img1}
-              <a>Validity of the chosen image is checked by the regex.</a>
+              <span>Validity of the chosen image is checked by the regex.</span>
             </li>
             <li>
               {img1}
-              <a>
+              <span>
                 Website has been built on Antd components with Bootstrap and
                 custom CSS
-              </a>
+              </span>
             </li>
             <li>
               <img src="https://img.icons8.com/plumpy/24/26e07f/overtime.png" />
-              <a>
+              <span>
                 In the future, I am going to add JWT authorization and infinite
                 scrolling.
-              </a>
+              </span>
+            </li>
+            <li>
+            <img src="https://img.icons8.com/plumpy/24/26e07f/error--v1.png"/>
+              <span>
+                I know I could use Hash and better solution like in my
+                Sahara Car Deals App,{<br></br>} 
+              </span>
+              <span className="ml-4 pl-2">
+              but I want to show different approaches on my portfolio
+              </span>
+
             </li>
           </ul>
-          <Collapse >
+          <Collapse>
             <Panel header="About Me" key="1">
               <ul className="aboutme ">
                 <li>
                   {img2}
-                  <a>
+                  <span>
                     Third-year student of Applied Computer Science at the
                     Jagiellonian University.
-                  </a>
+                  </span>
                 </li>
                 <li>
                   {img2}
-                  <a>
+                  <span>
                     I am a person who likes to work with people and spend free
                     time actively.
-                  </a>
+                  </span>
                 </li>
                 <li>
                   {img2}
-                  <a>
+                  <span>
                     Interested in sports, movie editing, traveling and going to
                     concerts.
-                  </a>
+                  </span>
                 </li>
                 <li>
                   {img2}
-                  <a>I want to become a Front-End Developer.</a>
+                  <span>I want to become a Web Developer.</span>
                 </li>
               </ul>
             </Panel>
@@ -114,18 +125,18 @@ function About() {
               <ul className="aboutme ">
                 <li>
                   {img3}
-                  <a>Good knowledge in: Python, HTML, CSS</a>
+                  <span>Good knowledge in: Python, HTML, CSS</span>
                 </li>
                 <li>
                   {img3}
-                  <a>
+                  <span>
                     Medium knowledge of: C/C++, JavaScript, Java, SQL, GIT,
                     Bootstrap, Antd, EJS, NodeJs
-                  </a>
+                  </span>
                 </li>
                 <li>
                   {img3}
-                  <a>Basics of: Angular, React </a>
+                  <span>Basics of: Angular, React </span>
                 </li>
               </ul>
             </Panel>
@@ -145,7 +156,7 @@ function About() {
                 </li>
                 <li>
                   <img src="https://img.icons8.com/ios-filled/24/000000/apple-phone.png" />
-                  <a>792 256 101</a>
+                  <span>792 256 101</span>
                 </li>
               </ul>
             </Panel>

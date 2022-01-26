@@ -1,10 +1,10 @@
-const express = require("express");
 require("dotenv").config();
 
+const express = require("express");
 const app = express();
-const dbConnection = require("./db");
-const usersRoute = require("./routes/usersRoute");
-const postsRoute = require("./routes/postsRoute");
+const dbConnection = require("./server/models/database"); 
+const usersRoute = require("./server/routes/usersRoute");
+const postsRoute = require("./server/routes/postsRoute");
 app.use(express.json({ limit: "25mb" }));
 const path = require("path");
 app.use("/api/users/", usersRoute);
