@@ -157,3 +157,12 @@
     max-height: 100% !important;
   }
 }
+
+form {
+  background-color: white !important;
+  border-radius: 5px !important;
+}
+
+.fix-user .ant-col {
+  max-width: 37vw;
+}

@@ -1,16 +1,12 @@
 import React from "react";
 import { Layout } from "antd";
 
-import { Link } from "react-router-dom";
 import "./css/Components.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Container from "react-bootstrap/Container";
 
-import Dropdown from "react-bootstrap/Dropdown";
-
-const { Header, Content } = Layout;
+const { Content } = Layout;
 const currentuser = JSON.parse(localStorage.getItem("user"));
 
 class DefaultLayout extends React.Component {
@@ -28,6 +24,7 @@ class DefaultLayout extends React.Component {
             >
               <Navbar.Brand href="/">
                 <img
+                  alt="logo"
                   className="ml-2 mr-2 logo"
                   src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
                 />
@@ -37,6 +34,7 @@ class DefaultLayout extends React.Component {
                 <Nav className="me-auto">
                   <Nav.Link href="/">
                     <img
+                      alt="ico"
                       className="mr-2 "
                       src={`${process.env.PUBLIC_URL}/assets/images/Username.png`}
                     />
@@ -60,12 +58,12 @@ class DefaultLayout extends React.Component {
                 </div>
 
                 <Nav className="ml-auto home">
-                  <Nav.Link href="/">
+                  <Nav.Link href="https://sahara-car-deals.herokuapp.com/">
                     <img
-                      src={`${process.env.PUBLIC_URL}/assets/images/Home.png`}
+                      src={`${process.env.PUBLIC_URL}/assets/images/Car.png`}
                       alt="pic"
                     />
-                    <span className="ml-2 disc">Home</span>
+                    <span className="ml-2 disc">Car Deals - Portfolio2 </span>
                   </Nav.Link>
 
                   <Nav.Link href="/about">
@@ -88,7 +86,7 @@ class DefaultLayout extends React.Component {
                       alt="pic"
                     />
 
-                    <a className="ml-2 disc">Find Users</a>
+                    <span className="ml-2 disc">Find Users</span>
                   </Nav.Link>
                   <Nav.Link href="/myfollowers">
                     <img

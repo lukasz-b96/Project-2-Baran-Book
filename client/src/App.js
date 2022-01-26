@@ -9,7 +9,7 @@ import {
 import "antd/dist/antd.min.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getAllPosts } from "./redux/actions/postActions";
+import { getAllPosts } from "./redux/actions/PostActions";
 import Home from "./pages/Home";
 import AddPost from "./pages/AddPost";
 import Register from "./pages/Register";
@@ -25,6 +25,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllPosts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

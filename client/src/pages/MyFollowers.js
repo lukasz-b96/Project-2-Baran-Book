@@ -1,9 +1,9 @@
 import { Row } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 import User from "../components/User";
-import { getAllUsers } from "../redux/actions/userActions";
+import { getAllUsers } from "../redux/actions/UserActions";
 import "./css/Pages.css";
 const currentUser = JSON.parse(localStorage.getItem("user"));
 function AllUsers() {
@@ -13,6 +13,7 @@ function AllUsers() {
 
   useEffect(() => {
     dispatch(getAllUsers());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <DefaultLayout>
@@ -24,9 +25,6 @@ function AllUsers() {
           {users
             .filter((obj) => currentUser.followers.includes(obj._id))
             .map((user, index) => {
-              {
-                console.log(currentUser.followers);
-              }
               return (
                 <div className="ml-2" key={index}>
                   <User user={user} />

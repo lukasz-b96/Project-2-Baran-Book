@@ -1,8 +1,8 @@
 import React from "react";
-import { Row, Col, Form, Input, Button } from "antd";
+import { Form, Input, Button } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userRegister } from "../redux/actions/userActions";
+import { userRegister } from "../redux/actions/UserActions";
 import "./css/Pages.css";
 function Register() {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ function Register() {
         <div className="card-main">
           <div className="d-flex align-items-center justify-content-center">
             <img
+              alt="logo"
               className=" logo2"
               src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
             />

@@ -31,13 +31,13 @@ export const addPost = (values) => async (dispatch) => {
 
 export const getAllPosts = () => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
-  console.log("WORKING");
+  // console.log("WORKING");
   try {
     const response = await axios.get("/api/posts/getallposts");
     dispatch({ type: "LOADING", payload: false });
     dispatch({ type: "GET_ALL_POSTS", payload: response.data });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     dispatch({ type: "LOADING", payload: false });
     message.error("something went wrong");
   }
@@ -46,7 +46,7 @@ export const getAllPosts = () => async (dispatch) => {
 export const likeOrUnlikePost = (values) => async (dispatch) => {
   values.userid = JSON.parse(localStorage.getItem("user"))._id.toString();
 
-  console.log(values);
+  //console.log(values);
   dispatch({ type: "LIKE_UNLIKE_LOADING", payload: true });
 
   try {

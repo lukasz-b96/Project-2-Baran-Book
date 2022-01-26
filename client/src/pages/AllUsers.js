@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 import User from "../components/User";
-import { getAllUsers } from "../redux/actions/userActions";
+import { getAllUsers } from "../redux/actions/UserActions";
 import "./css/Pages.css";
 function AllUsers() {
   const { users } = useSelector((state) => state.usersReducer);
@@ -13,6 +13,7 @@ function AllUsers() {
 
   useEffect(() => {
     dispatch(getAllUsers());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <DefaultLayout>

@@ -1,8 +1,8 @@
 import React from "react";
-import { Row, Col, Form, Input, Button } from "antd";
+import { Form, Input, Button } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userLogin } from "../redux/actions/userActions";
+import { userLogin } from "../redux/actions/UserActions";
 import "./css/Pages.css";
 function Login() {
   const dispatch = useDispatch();
@@ -16,7 +16,8 @@ function Login() {
       <div className="card-main">
         <div className="d-flex align-items-center justify-content-center">
           <img
-            className="  logo2"
+            alt="logo"
+            className="logo2"
             src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`}
           />
         </div>

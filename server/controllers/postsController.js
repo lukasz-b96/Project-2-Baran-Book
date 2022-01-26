@@ -1,10 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const { cloudinary } = require("../cloudinary");
+const { cloudinary } = require("../../cloudinary");
 const Post = require("../models/postModel");
 const moment = require("moment");
 
-router.post("/addpost", async (req, res) => {
+exports.postSubmitPost = async (req, res) => {
   try {
     const uploadResponse = await cloudinary.v2.uploader.upload(req.body.image, {
       folder: "barangram",
@@ -22,9 +20,9 @@ router.post("/addpost", async (req, res) => {
     console.log(error);
     return res.status(400).json(error);
   }
-});
+};
 
-router.get("/getallposts", async (req, res) => {
+exports.exploreAllPosts = async (req, res) => {
   try {
     const posts = await Post.find()
       .populate("user")
@@ -34,16 +32,15 @@ router.get("/getallposts", async (req, res) => {
   } catch (error) {
     return res.status(400).json(error);
   }
-});
-
-router.post("/likeorunlikepost", async (req, res) => {
+};
+exports.changeLike = async (req, res) => {
   try {
     const post = await Post.findOne({ _id: req.body.postid });
 
     //console.log(req.body);
     //console.log(post);
     var likes = post.likes;
-    console.log(likes);
+    //console.log(likes);
 
     if (likes.find((obj) => obj.user == req.body.userid)) {
       const temp = likes.filter(
@@ -69,6 +66,4 @@ router.post("/likeorunlikepost", async (req, res) => {
     console.log(error);
     return res.status(400).json(error);
   }
-});
-
-module.exports = router;
+};

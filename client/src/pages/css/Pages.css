@@ -31,13 +31,14 @@ li a:hover {
   margin: auto;
 
   min-height: 100%;
-  max-width: 40vw !important;
+  min-width: 55vw !important;
+  max-width: 55vw !important;
   max-height: 100%;
 }
 
-.ant-col .postimage2 {
-  max-height: 30vw;
-  max-width: 30vw !important;
+.postimage2 {
+  max-height: 35vw;
+  max-width: 35vw !important;
   margin-bottom: 10px;
 }
 
@@ -49,7 +50,7 @@ li a:hover {
 .logo2 {
   margin-bottom: 10px;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   .register-login {
     padding-top: 10px;
   }
@@ -61,12 +62,15 @@ li a:hover {
   }
   .card-main {
     min-width: 80vw !important;
-    width: 80vw !important;
+    width: 80vw;
   }
   ul li a {
     font-size: 10px;
   }
   ul li img {
     width: 12px;
+  }
+  .ant-form-item-control-input {
+    min-width: 100%;
   }
 }

@@ -1,10 +1,8 @@
-const express = require("express");
-const router = express.Router();
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 
 // async to use try catch insted of callback function
-router.post("/register", async (req, res) => {
+exports.register = async (req, res) => {
   //check if user exists
   try {
     const user = await User.findOne({
@@ -23,8 +21,8 @@ router.post("/register", async (req, res) => {
         username: req.body.username,
         password: hash,
       });
-      console.log("|" + req.body.password + "|");
-      console.log(hash);
+      // console.log("|" + req.body.password + "|");
+      // console.log(hash);
 
       // console.log(req.body);
       // console.log(user);
@@ -35,9 +33,10 @@ router.post("/register", async (req, res) => {
     console.error(error);
     return res.status(401).json(error);
   }
-});
+};
 
-router.post("/login", (req, res) => {
+// NOT ASYNC SO .then
+exports.login = (req, res) => {
   let fetchedUser;
   User.findOne({ username: req.body.username })
     .then((user) => {
@@ -47,9 +46,9 @@ router.post("/login", (req, res) => {
         });
       }
       bcrypt.hash(req.body.password, 10).then((hash) => {
-        console.log("\n|" + req.body.password + "|  body");
-        console.log("|" + user.password + "|   user");
-        console.log(hash);
+        //console.log("\n|" + req.body.password + "|  body");
+        //console.log("|" + user.password + "|   user");
+        //console.log(hash);
       });
 
       fetchedUser = user;
@@ -68,27 +67,9 @@ router.post("/login", (req, res) => {
         message: "Invalid authentication credentials!",
       });
     });
-});
+};
 
-// try {
-
-//   const user = await User.findOne({
-//     username: req.body.username,
-//   });
-//   const {password} = user
-//   console.log(password);
-
-//   if (bcrypt.compare(req.body.password, password)) {
-//     return res.status(200).send(user);
-//   } else {
-//     return res.status(401).send("invalid credentials");
-//   }
-// } catch (error) {
-//   console.error(error);
-//   return res.status(401).json(error);
-// }
-
-router.get("/getallusers", async (req, res) => {
+exports.getAll = async (req, res) => {
   try {
     const users = await User.find();
     res.send(users);
@@ -96,67 +77,65 @@ router.get("/getallusers", async (req, res) => {
     console.log(error);
     return res.status(400).json(error);
   }
-});
+};
 
-router.post("/followuser", async (req, res) => {
-  const { currentuserid, receiveruserid } = req.body;
-  console.log(req.body);
+exports.follow = async (req, res) => {
+  const { currentuserid, getUserid } = req.body;
+  //console.log(req.body);
   try {
     var currentuser = await User.findOne({ _id: currentuserid });
     var currentUserFollowing = currentuser.following;
-    currentUserFollowing.push(receiveruserid);
+    currentUserFollowing.push(getUserid);
 
     currentuser.following = currentUserFollowing;
 
     await User.updateOne({ _id: currentuserid }, currentuser);
 
-    var receiveruser = await User.findOne({ _id: receiveruserid });
-    var receiverUserFollowers = receiveruser.followers;
+    var getUser = await User.findOne({ _id: getUserid });
+    var getUserFollowers = getUser.followers;
 
-    receiverUserFollowers.push(currentuserid);
+    getUserFollowers.push(currentuserid);
 
-    receiveruser.followers = receiverUserFollowers;
+    getUser.followers = getUserFollowers;
 
-    await User.updateOne({ _id: receiveruserid }, receiveruser);
+    await User.updateOne({ _id: getUserid }, getUser);
 
     res.send("Followed successfully");
   } catch (error) {
     console.log(error);
     return res.status(400).json(error);
   }
-});
+};
 
-router.post("/unfollowuser", async (req, res) => {
-  const { currentuserid, receiveruserid } = req.body;
-  console.log(req.body);
+exports.unfollow = async (req, res) => {
+  const { currentuserid, getUserid } = req.body;
+  //console.log(req.body);
   try {
     var currentuser = await User.findOne({ _id: currentuserid });
     var currentUserFollowing = currentuser.following;
 
     const temp1 = currentUserFollowing.filter(
-      (obj) => obj.toString() !== receiveruserid
+      (obj) => obj.toString() !== getUserid
     );
 
     currentuser.following = temp1;
 
     await User.updateOne({ _id: currentuserid }, currentuser);
 
-    var receiveruser = await User.findOne({ _id: receiveruserid });
-    var receiverUserFollowers = receiveruser.followers;
+    var getUser = await User.findOne({ _id: getUserid });
+    var getUserFollowers = getUser.followers;
 
-    const temp2 = receiverUserFollowers.filter(
+    const temp2 = getUserFollowers.filter(
       (obj) => obj.toString() !== currentuserid
     );
 
-    receiveruser.followers = temp2;
+    getUser.followers = temp2;
 
-    await User.updateOne({ _id: receiveruserid }, receiveruser);
+    await User.updateOne({ _id: getUserid }, getUser);
 
     res.send("UnFollowed successfully");
   } catch (error) {
     console.log(error);
     return res.status(400).json(error);
   }
-});
-
-module.exports = router;
+};

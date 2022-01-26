@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import moment from "moment";
 import { HeartFilled } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Input } from "antd";
-import { getAllPosts, likeOrUnlikePost } from "../redux/actions/postActions";
+import { getAllPosts, likeOrUnlikePost } from "../redux/actions/PostActions";
 import "./css/Components.css";
-const { TextArea } = Input;
+
 function Post({ post }) {
   const dispatch = useDispatch();
   const currentuser = JSON.parse(localStorage.getItem("user"));
   const alreadyLiked = post.likes.find(
-    (obj) => obj.user.toString() == currentuser._id
+    (obj) => obj.user.toString() === currentuser._id
   );
 
   const { likeOrUnlikeLoading } = useSelector((state) => state.alertsReducer);
   useEffect(() => {
     dispatch(getAllPosts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [likeOrUnlikeLoading]);
 
   return (
@@ -24,11 +24,12 @@ function Post({ post }) {
         <img
           className="username ml-2"
           src="https://img.icons8.com/plumpy/25/000000/username.png"
+          alt="pic"
         />
         <span className="username ml-2 mr-2">{post.user.username}</span>
       </div>
 
-      <img src={post.image} className="postimage " />
+      <img src={post.image} className="postimage " alt="pic" />
 
       <div className="m-auto">
         <p className="ds1 mt1 mb-1 text-left">{post.description}</p>
