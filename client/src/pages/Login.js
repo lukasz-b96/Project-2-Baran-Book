@@ -29,6 +29,7 @@ function Login() {
             label="Username"
             name="username"
             rules={[{ required: true }]}
+            placeholer="e.g. Messi"
           >
             <Input />
           </Form.Item>
@@ -36,6 +37,7 @@ function Login() {
             label="Password"
             name="password"
             rules={[{ required: true }]}
+            placeholer="e.g. Messi"
           >
             <Input.Password />
           </Form.Item>
