@@ -63,7 +63,7 @@ class DefaultLayout extends React.Component {
                       src={`${process.env.PUBLIC_URL}/assets/images/Car.png`}
                       alt="pic"
                     />
-                    <span className="ml-2 disc">Car Deals - Portfolio2 </span>
+                    <span className="ml-2 disc">Sahara Car Deals</span>
                   </Nav.Link>
 
                   <Nav.Link href="/about">
