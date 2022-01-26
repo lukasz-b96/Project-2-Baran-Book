@@ -29,19 +29,17 @@ function Login() {
             label="Username"
             name="username"
             rules={[{ required: true }]}
-            placeholder="e.g. Messi"
           >
-            <Input />
+            <Input placeholder="e.g. Messi" />
           </Form.Item>
           <Form.Item
             label="Password"
             name="password"
             rules={[{ required: true }]}
-            placeholder="e.g. Messi"
           >
-            <Input.Password />
+            <Input.Password placeholder="e.g. Messi" />
           </Form.Item>
-
+          <div></div>
           <div>
             <Button htmlType="submit">Login</Button>
           </div>
