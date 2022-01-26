@@ -24,7 +24,7 @@ function About() {
           <ul className="aboutme justify-content-between">
             <li>
               {img1}
-              <span>Sample web application deployed on Heroku. </span>
+              <span>Sample web application deployed on Heroku </span>
             </li>
             <li>
               {img1}
@@ -44,33 +44,33 @@ function About() {
               {img1}
               <span>
                 Each user can create their own post, give a heart to posts of
-                other users and find others.
+                other users and find others
               </span>
             </li>
             <li>
               {img1}
               <span>
                 The server sends pictures as Base64 to "Cloudinary" and hosting
-                response with URL link.
+                response with URL link
               </span>
             </li>
             <li>
               {img1}
               <span>
                 You can and follow or unfollow other users, moreover, you can
-                check who follows you.
+                check who follows you
               </span>
             </li>
             <li>
               {img1}
               <span>
                 For each post, you need to add a photo but the description is
-                not necessary.
+                not necessary
               </span>
             </li>
             <li>
               {img1}
-              <span>Validity of the chosen image is checked by the regex.</span>
+              <span>Validity of the chosen image is checked by the regex</span>
             </li>
             <li>
               {img1}
@@ -93,7 +93,7 @@ function About() {
               />
               <span>
                 In the future, I am going to add JWT authorization and infinite
-                scrolling.
+                scrolling
               </span>
             </li>
             <li>
@@ -117,26 +117,26 @@ function About() {
                   {img2}
                   <span>
                     Third-year student of Applied Computer Science at the
-                    Jagiellonian University.
+                    Jagiellonian University
                   </span>
                 </li>
                 <li>
                   {img2}
                   <span>
                     I am a person who likes to work with people and spend free
-                    time actively.
+                    time actively
                   </span>
                 </li>
                 <li>
                   {img2}
                   <span>
                     Interested in sports, movie editing, traveling and going to
-                    concerts.
+                    concerts
                   </span>
                 </li>
                 <li>
                   {img2}
-                  <span>I want to become a Web Developer.</span>
+                  <span>I want to become a Web Developer</span>
                 </li>
               </ul>
             </Panel>
