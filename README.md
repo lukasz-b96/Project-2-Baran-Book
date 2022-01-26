@@ -1,15 +1,17 @@
 # Project-2-Baran-Book
 
-### Author: Łukasz Baran
+## Author: Łukasz Baran
 
-## Backend: Node.js
+## Deployment: https://baran-book.herokuapp.com/
 
-### Run: npm run server
+### Backend: Node.js
 
-### Style Convention: camelCase
+#### Run: npm run server
 
-## Frontend: React.js
+#### Style Convention: camelCase
 
-### Run: npm run client
+### Frontend: React.js
 
-### Style Convention: PascalCase
+#### Run: npm run client
+
+#### Style Convention: PascalCase
