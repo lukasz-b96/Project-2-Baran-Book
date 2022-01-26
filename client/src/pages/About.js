@@ -80,6 +80,13 @@ function About() {
               </span>
             </li>
             <li>
+              {img1}
+              <span>
+                The website is responsive and scales correctly for mobile
+                devices
+              </span>
+            </li>
+            <li>
               <img
                 src="https://img.icons8.com/plumpy/24/26e07f/overtime.png"
                 alt="ico"
