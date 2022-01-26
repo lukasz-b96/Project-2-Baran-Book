@@ -1,10 +1,10 @@
-#@ Backend: Node.js
+## Backend: Node.js
 
 ### Run: npm run server
 
 ### Naming convention: camelCase
 
-#@ Frontend: React.js
+## Frontend: React.js
 
 ### Run: npm run client
 
