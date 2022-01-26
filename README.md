@@ -1,11 +1,11 @@
-# Backend: Node.js
+#@ Backend: Node.js
 
-## Run: npm run server
+### Run: npm run server
 
-## Style Convention: camelCase
+### Naming convention: camelCase
 
-# Frontend: React.js
+#@ Frontend: React.js
 
-## Run: npm run client
+### Run: npm run client
 
-## Style Convention: PascalCase
+### Naming convention: PascalCase
