@@ -80,25 +80,25 @@ exports.getAll = async (req, res) => {
 };
 
 exports.follow = async (req, res) => {
-  const { currentuserid, getUserid } = req.body;
+  const { currentuserid, receiveruserid } = req.body;
   //console.log(req.body);
   try {
     var currentuser = await User.findOne({ _id: currentuserid });
     var currentUserFollowing = currentuser.following;
-    currentUserFollowing.push(getUserid);
+    currentUserFollowing.push(receiveruserid);
 
     currentuser.following = currentUserFollowing;
 
     await User.updateOne({ _id: currentuserid }, currentuser);
 
-    var getUser = await User.findOne({ _id: getUserid });
-    var getUserFollowers = getUser.followers;
+    var receiveruser = await User.findOne({ _id: receiveruserid });
+    var receiveruserFollowers = receiveruser.followers;
 
-    getUserFollowers.push(currentuserid);
+    receiveruserFollowers.push(currentuserid);
 
-    getUser.followers = getUserFollowers;
+    receiveruser.followers = receiveruserFollowers;
 
-    await User.updateOne({ _id: getUserid }, getUser);
+    await User.updateOne({ _id: receiveruserid }, receiveruser);
 
     res.send("Followed successfully");
   } catch (error) {
@@ -108,30 +108,31 @@ exports.follow = async (req, res) => {
 };
 
 exports.unfollow = async (req, res) => {
-  const { currentuserid, getUserid } = req.body;
+  const { currentuserid, receiveruserid } = req.body;
   //console.log(req.body);
   try {
     var currentuser = await User.findOne({ _id: currentuserid });
     var currentUserFollowing = currentuser.following;
 
     const temp1 = currentUserFollowing.filter(
-      (obj) => obj.toString() !== getUserid
+      (obj) => obj.toString() !== receiveruserid
     );
 
     currentuser.following = temp1;
 
     await User.updateOne({ _id: currentuserid }, currentuser);
 
-    var getUser = await User.findOne({ _id: getUserid });
-    var getUserFollowers = getUser.followers;
+    var receiveruser = await User.findOne({ _id: receiveruserid });
 
-    const temp2 = getUserFollowers.filter(
+    var receiveruserFollowers = receiveruser.followers;
+
+    const temp2 = receiveruserFollowers.filter(
       (obj) => obj.toString() !== currentuserid
     );
 
-    getUser.followers = temp2;
+    receiveruser.followers = temp2;
 
-    await User.updateOne({ _id: getUserid }, getUser);
+    await User.updateOne({ _id: receiveruserid }, receiveruser);
 
     res.send("UnFollowed successfully");
   } catch (error) {
