@@ -5,11 +5,18 @@ import "./css/Pages.css";
 
 function About() {
   const { Panel } = Collapse;
-  const img1 = <img src="https://img.icons8.com/plumpy/24/26e07f/job.png" />;
-  const img2 = (
-    <img src="https://img.icons8.com/plumpy/24/26e07f/user-male.png" />
+  const img1 = (
+    <img src="https://img.icons8.com/plumpy/24/26e07f/job.png" alt="ico" />
   );
-  const img3 = <img src="https://img.icons8.com/plumpy/24/26e07f/code.png" />;
+  const img2 = (
+    <img
+      src="https://img.icons8.com/plumpy/24/26e07f/user-male.png"
+      alt="ico"
+    />
+  );
+  const img3 = (
+    <img src="https://img.icons8.com/plumpy/24/26e07f/code.png" alt="ico" />
+  );
   return (
     <DefaultLayout>
       <Row justify="center">
@@ -73,22 +80,27 @@ function About() {
               </span>
             </li>
             <li>
-              <img src="https://img.icons8.com/plumpy/24/26e07f/overtime.png" />
+              <img
+                src="https://img.icons8.com/plumpy/24/26e07f/overtime.png"
+                alt="ico"
+              />
               <span>
                 In the future, I am going to add JWT authorization and infinite
                 scrolling.
               </span>
             </li>
             <li>
-            <img src="https://img.icons8.com/plumpy/24/26e07f/error--v1.png"/>
+              <img
+                src="https://img.icons8.com/plumpy/24/26e07f/error--v1.png"
+                alt="ico"
+              />
               <span>
-                I know I could use Hash and better solution like in my
-                Sahara Car Deals App,{<br></br>} 
+                I know I could better solutions from my Sahara Car Deals App,
+                {<br></br>}
               </span>
               <span className="ml-4 pl-2">
-              but I want to show different approaches on my portfolio
+                but I want to show different approaches on my portfolio
               </span>
-
             </li>
           </ul>
           <Collapse>
@@ -144,18 +156,27 @@ function About() {
               <ul className="aboutme d-flex justify-content-between">
                 <li>
                   {
-                    <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" />
+                    <img
+                      src="https://img.icons8.com/ios-filled/24/000000/linkedin.png"
+                      alt="ico"
+                    />
                   }
                   <a href="https://www.linkedin.com/in/%C5%82ukasz-baran-15813322b/">
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <img src="https://img.icons8.com/material-outlined/24/000000/github.png" />
+                  <img
+                    src="https://img.icons8.com/material-outlined/24/000000/github.png"
+                    alt="ico"
+                  />
                   <a href="https://github.com/lukasz-b96">GitHuB</a>
                 </li>
                 <li>
-                  <img src="https://img.icons8.com/ios-filled/24/000000/apple-phone.png" />
+                  <img
+                    src="https://img.icons8.com/ios-filled/24/000000/apple-phone.png"
+                    alt="ico"
+                  />
                   <span>792 256 101</span>
                 </li>
               </ul>

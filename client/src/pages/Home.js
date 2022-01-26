@@ -1,7 +1,6 @@
 import React from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector } from "react-redux";
-import { Col, Row } from "antd";
 import Post from "../components/Post";
 import "./css/Pages.css";
 function Home() {

@@ -7,7 +7,7 @@ import {
   followUser,
   getAllUsers,
   unfollowUser,
-} from "../redux/actions/userActions";
+} from "../redux/actions/UserActions";
 
 function User({ user }) {
   const currentUser = JSON.parse(localStorage.getItem("user"));
@@ -18,9 +18,10 @@ function User({ user }) {
 
   useEffect(() => {
     dispatch(getAllUsers());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [followLoading, unfollowLoading]);
   return (
-    <div>
+    <div class="fix-user">
       {currentUser._id !== user._id && (
         <Col lg={5} xs={24} className="text-left">
           <div className="bs1 p-3 mt-3">
@@ -33,7 +34,7 @@ function User({ user }) {
             <span className="d-flex justify-content-center disc">
               {moment(user.createdAt).format("DD.MM.YYYY HH:mm")}
             </span>
-            {user.followers.find((obj) => obj == currentUser._id) ? (
+            {user.followers.find((obj) => obj === currentUser._id) ? (
               <div className=" mt-2 ">
                 <Button
                   type="primary"

@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { composeWithDevTools } from "@redux-devtools/extension";
 import thunk from "redux-thunk";
-import { usersReducer } from "./reducers/userReducer";
-import { alertsReducer } from "./reducers/alertsReducer";
-import { postsReducer } from "./reducers/postsReducer";
+import { usersReducer } from "./reducers/UserReducer";
+import { alertsReducer } from "./reducers/AlertsReducer";
+import { postsReducer } from "./reducers/PostsReducer";
 
 const rootReducer = combineReducers({
   usersReducer: usersReducer,
