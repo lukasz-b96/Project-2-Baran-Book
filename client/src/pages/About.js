@@ -103,9 +103,14 @@ function About() {
               />
               <span>
                 I know I could better solutions from my Sahara Car Deals App,
-                {<br></br>}
               </span>
-              <span className="ml-4 pl-2">
+            </li>
+            <li>
+              <img
+                src="https://img.icons8.com/plumpy/24/26e07f/error--v1.png"
+                alt="ico"
+              />
+              <span>
                 but I want to show different approaches on my portfolio
               </span>
             </li>
