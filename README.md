@@ -1,11 +1,15 @@
-# Backend: Node.js
+# Project-2-Baran-Book
 
-## Run: npm run server
+### Author: Łukasz Baran
 
-## Style Convention: camelCase
+## Backend: Node.js
 
-# Frontend: React.js
+### Run: npm run server
 
-## Run: npm run client
+### Style Convention: camelCase
 
-## Style Convention: PascalCase
+## Frontend: React.js
+
+### Run: npm run client
+
+### Style Convention: PascalCase
