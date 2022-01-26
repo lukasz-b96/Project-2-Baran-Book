@@ -7,7 +7,7 @@ function Home() {
   const { posts } = useSelector((state) => state.postsReducer);
   return (
     <DefaultLayout>
-      <div className="m-3">
+      <div className="">
         {posts.map((post, index) => {
           return (
             <div key={index} className="card-main">
